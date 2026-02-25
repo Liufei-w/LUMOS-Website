@@ -1,0 +1,289 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  /* background-image: url(../img/background); */
+  background-image:
+    linear-gradient(rgba(4, 15, 22, 0.8), rgba(4, 15, 22, 0.8)),
+    url("../img/background");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  font-family: "Noto Sans", sans-serif;
+}
+
+/* Navigation */
+.navigation {
+  background-color: rgba(8, 83, 122, 0.4);
+  padding: 10px 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 0 0 14px 14px;
+}
+
+.navigation ul {
+  display: flex;
+  align-items: center;
+}
+
+.navigation ul li {
+  list-style: none;
+  margin: 0 10px;
+  height: 40px;
+  width: 100px;
+  background-color: #092635;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.navigation ul li.push-right {
+  margin-left: auto;
+}
+.navigation a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.navigation ul li:hover {
+  background-color: #ff7b00;
+}
+
+/* Section */
+section.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8%;
+  margin: 100px 125px 0px 0px;
+}
+
+/*Login Form */
+.login-form {
+  width: 420px;
+  background-color: rgba(8, 83, 122, 0.4);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 34px;
+  color: white;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.login-form h2 {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+/* Ô chứa Icon và Input */
+.input-container {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 8px;
+  padding: 0 15px;
+  height: 50px;
+}
+
+.input-container .icon {
+  color: #555;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.input-container input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 14px;
+  height: 100%;
+}
+
+/*Forgot Password */
+.forgot-pass {
+  text-align: right;
+  margin-top: -10px;
+  margin-bottom: 25px;
+}
+
+.forgot-pass a {
+  color: white;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+/* Nút Login*/
+.btn-login {
+  width: 100%;
+  padding: 14px;
+  background-color: #092635;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-login:hover {
+  background-color: #044869;
+}
+
+/* Separator */
+.separator {
+  display: flex;
+  align-items: center;
+  margin: 25px 0;
+  font-size: 13px;
+}
+
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.separator span {
+  padding: 0 10px;
+}
+
+/* Social Login Icon */
+.social-login {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.social-icon {
+  width: 45px;
+  height: 45px;
+  background-color: white;
+  color: #333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+  background-color: #ff7b00;
+  color: white;
+}
+.signup-text {
+  text-align: center;
+  font-size: 14px;
+}
+
+.signup-text a {
+  color: #ff7b00;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Slogan Image */
+.slogan {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 210px;
+}
+
+.slogan img {
+  max-width: 100%;
+  width: 950px;
+  height: auto;
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
+}
+
+.login-form {
+  width: 420px;
+  background-color: rgba(8, 83, 122, 0.4);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 34px;
+  color: white;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  flex-shrink: 0;
+}
+
+/* =================================
+   RESPONSIVE DESIGN cho điện thoại
+==================================== */
+
+@media screen and (max-width: 768px) {
+  .navigation {
+    padding: 15px 10px;
+  }
+
+  .navigation ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navigation ul img {
+    flex-basis: 100%;
+    height: 70px !important;
+    object-fit: contain;
+    margin: 0 0 15px 0 !important;
+  }
+
+  .navigation ul li {
+    margin: 5px;
+    width: 75px;
+    height: 35px;
+  }
+
+  .navigation a {
+    font-size: 13px;
+  }
+
+  .navigation ul li:nth-child(4) {
+    margin-left: 5px;
+  }
+
+  section.container {
+    flex-direction: column;
+    padding: 30px 5%;
+  }
+
+  .slogan {
+    padding-right: 0;
+    width: 100%;
+  }
+
+  .slogan img {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .login-form {
+    width: 100%;
+    padding: 30px 20px;
+  }
+}

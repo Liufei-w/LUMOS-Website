@@ -1,0 +1,465 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Noto Sans", sans-serif;
+    color: white;
+}
+
+/* Background */
+.wrapper {
+    background-image: linear-gradient(rgba(4, 15, 22, 0.8), rgba(4, 15, 22, 0.8)), url('../img/background');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+/* Navigation*/
+.navigation {
+    background-color: rgba(8, 83, 122, 0.4);
+    backdrop-filter: blur(10px);
+    padding: 10px 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 14px 14px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navigation ul {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 75px;
+    height: 70px;
+    margin: 0 20px;
+}
+
+.navigation ul li {
+  list-style: none;
+  margin: 0 10px;
+  height: 40px;
+  width: 100px;
+  background-color: #092635;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+/* Nhóm nằm bên phải */
+.navigation ul li.push-right {
+    margin-left: auto;
+}
+
+/* Thanh tìm kiếm */
+.navigation ul li.nav-search {
+    width: 600px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0; 
+    margin-left: 20px;
+}
+
+.navigation ul li.nav-search:hover {
+    background-color: rgba(255, 255, 255, 0.15); 
+}
+
+.nav-search input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    padding-left: 15px;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+}
+
+.nav-search input::placeholder {
+    color: #cccccc;
+}
+
+.nav-search button {
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 0 15px;
+    height: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav-search button:hover {
+    color: #ff7b00;
+}
+.navigation a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.navigation ul li:hover {
+    background-color: #ff7b00;
+}
+
+/* sidebar + main */
+.shop-container {
+    display: flex;
+    padding: 30px 40px;
+    gap: 30px; 
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 250px;
+    /* flex-shrink: 0; */
+}
+
+.sidebar-box {
+    background-color: rgba(8, 83, 122, 0.3);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.sidebar-box h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ff7b00;
+}
+
+.category-list {
+    list-style: none;
+}
+
+.category-list li {
+    margin-bottom: 12px;
+}
+
+.category-list a {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.category-list a:hover {
+    color: #ffffff;
+    padding-left: 5px;
+}
+
+/* Main content */
+.main-content {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Banner */
+.banner-slider {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    background-color: #092635; 
+}
+
+.banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+}
+
+.banner-text h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+
+.btn-shop {
+    margin-top: 15px;
+    padding: 10px 25px;
+    background-color: #ff7b00;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-shop:hover { background-color: #e66a00; }
+
+/* Thanh Sắp Xếp */
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(8, 83, 122, 0.3);
+    backdrop-filter: blur(8px);
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+.toolbar h2 { font-size: 20px; }
+
+.sort-options select {
+    background-color: #092635;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 8px 15px;
+    border-radius: 8px;
+    outline: none;
+}
+
+/* Layout sách */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* Thẻ sách */
+.product-card {
+    background-color: rgba(8, 83, 122, 0.2);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 15px;
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    background-color: rgba(8, 83, 122, 0.4);
+}
+
+.product-img-box {
+    width: 100%;
+    height: 250px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    background-color: #1a1a1a;
+}
+
+.product-img-box img {
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; */
+}
+
+.book-title {
+    font-size: 16px;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.book-author {
+    font-size: 13px;
+    color: #aaaaaa;
+    margin-bottom: 10px;
+}
+
+.rating {
+    color: #ffd700; /* Màu cho ngôi sao*/
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.price-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff7b00;
+}
+
+.btn-add {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-add:hover {
+    background: white;
+    color: #092635;
+}
+
+
+/* ==============================================================================================================================================================================================
+                                                                                    CATEGORIES(TRANG Danh mucj)
+   ==============================================================================================================================================================================================*/
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px;
+    margin-top: 10px;
+}
+
+/* Thẻ danh mục */
+.category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(8, 83, 122, 0.2);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 40px 20px;
+    text-decoration: none;
+    color: white;
+    min-height: 180px;
+    transition: all 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    background-color: rgba(8, 83, 122, 0.5);
+    border-color: #ff7b00;
+}
+/* Icon */
+.category-card i {
+    font-size: 50px;
+    color: #ff7b00;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover i {
+    transform: scale(1.1);
+}
+
+.category-card h3 {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+/* ==============================================================================================================================================================================================
+                                                                                    AUTHOR (TRANG TÁC GIẢ)
+   ==============================================================================================================================================================================================
+ */
+
+.author-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 30px;
+    margin-top: 10px;
+}
+
+/* Thẻ info tác giả */
+.author-card {
+    background-color: rgba(8, 83, 122, 0.2);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.author-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    background-color: rgba(8, 83, 122, 0.4);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Khung tròn */
+.author-img-box {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    background-color: #092635;
+    transition: all 0.3s ease;
+}
+
+.author-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.author-card:hover .author-img-box {
+    border-color: #ff7b00;
+    transform: scale(1.05);
+}
+
+.author-card h3 {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.author-card p {
+    font-size: 13px;
+    color: #cccccc;
+    margin-bottom: 20px;
+}
+
+.btn-author {
+    background-color: transparent;
+    color: #ff7b00;
+    border: 1px solid #ff7b00;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: auto; 
+}
+
+.btn-author:hover {
+    background-color: #ff7b00;
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 123, 0, 0.5);
+}
