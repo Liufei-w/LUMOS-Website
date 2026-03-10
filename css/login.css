@@ -16,7 +16,11 @@
   min-height: 100vh;
   font-family: "Noto Sans", sans-serif;
 }
-
+.logo-img {
+  width: 75px;
+  height: 70px;
+  margin: 0 20px;
+}
 /* Navigation */
 .navigation {
   background-color: rgba(8, 83, 122, 0.4);
