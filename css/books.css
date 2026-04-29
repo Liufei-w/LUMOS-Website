@@ -11,7 +11,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Chỉ áp dụng hiệu ứng snap scroll cho trang About Us để không vỡ trang khác */
 html.about-page {
   height: 100%;
   scroll-snap-type: y mandatory;
@@ -33,7 +32,6 @@ body {
   min-height: 100vh;
 }
 
-/* Dùng chung hiệu ứng mờ dần */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -46,7 +44,7 @@ body {
 }
 
 /* =========================================
-   2. NAVIGATION (Dùng chung)
+   2. NAVIGATION
 ========================================= */
 .navigation {
   background-color: rgba(8, 83, 122, 0.4);
@@ -81,10 +79,6 @@ body {
   align-items: center;
   justify-content: center;
   transition: 0.3s;
-}
-
-.navigation ul li.push-right {
-  margin-left: auto;
 }
 
 .navigation ul li.nav-search {
@@ -142,7 +136,7 @@ body {
 }
 
 /* =========================================
-   3. SHARED COMPONENTS (Tiêu đề, Sidebar box, Footer)
+   3. SHARED COMPONENTS
 ========================================= */
 .hero-section {
   text-align: center;
@@ -400,7 +394,6 @@ body {
   margin: 0 auto;
 }
 
-/* Áp dụng riêng cho sidebar bên trang About Us */
 .aboutUs .sidebar {
   position: sticky;
   top: 150px;
@@ -768,11 +761,8 @@ body {
 /* =========================================
    7. FORM CHUNG (LOGIN & SIGNUP)
 ========================================= */
-.input-group {
-  margin-bottom: 15px;
-}
-
-.input-group label {
+/* Đã đổi tên class tránh đụng độ với class mặc định của Bootstrap */
+.custom-input-group label {
   display: block;
   margin-bottom: 6px;
   font-size: 14px;
@@ -816,7 +806,6 @@ input[type="date"] {
 .separator {
   display: flex;
   align-items: center;
-  margin: 20px 0;
   font-size: 13px;
   color: #cccccc;
 }
@@ -830,13 +819,6 @@ input[type="date"] {
 
 .separator span {
   padding: 0 10px;
-}
-
-.social-login {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 20px;
 }
 
 .social-icon {
@@ -896,24 +878,6 @@ section.login-container {
   flex-shrink: 0;
 }
 
-.login-form h2 {
-  font-size: 30px;
-  text-align: center;
-  margin-bottom: 25px;
-}
-
-.forgot-pass {
-  text-align: right;
-  margin-top: -10px;
-  margin-bottom: 25px;
-}
-
-.forgot-pass a {
-  color: white;
-  font-size: 13px;
-  text-decoration: none;
-}
-
 .btn-login {
   width: 100%;
   padding: 14px;
@@ -929,17 +893,6 @@ section.login-container {
 
 .btn-login:hover {
   background-color: #044869;
-}
-
-.signup-text {
-  text-align: center;
-  font-size: 14px;
-}
-
-.signup-text a {
-  color: #ff7b00;
-  text-decoration: none;
-  font-weight: bold;
 }
 
 /* =========================================
@@ -964,41 +917,6 @@ section.signup-container {
   flex-shrink: 0;
 }
 
-.signup-form h2 {
-  font-size: 28px;
-  margin-bottom: 5px;
-}
-
-.subtitle {
-  font-size: 13px;
-  color: #cccccc;
-  margin-bottom: 20px;
-}
-
-.checkbox-group {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  font-size: 13px;
-}
-
-.checkbox-group input[type="checkbox"] {
-  margin-right: 8px;
-  width: 15px;
-  height: 15px;
-  cursor: pointer;
-}
-
-.checkbox-group label {
-  color: #dddddd;
-}
-
-.checkbox-group a {
-  color: #ff7b00;
-  text-decoration: none;
-  font-weight: bold;
-}
-
 .btn-submit {
   width: 100%;
   padding: 12px;
@@ -1015,18 +933,6 @@ section.signup-container {
 .btn-submit:hover {
   background-color: #ff7b00;
   box-shadow: 0 5px 15px rgba(255, 123, 0, 0.4);
-}
-
-.signin-text {
-  text-align: center;
-  font-size: 13px;
-  color: #dddddd;
-}
-
-.signin-text a {
-  color: #ff7b00;
-  text-decoration: none;
-  font-weight: bold;
 }
 
 /* =========================================
