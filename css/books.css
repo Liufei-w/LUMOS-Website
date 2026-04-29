@@ -1,7 +1,20 @@
+/* =========================================
+   1. BASE & RESET
+========================================= */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Chỉ áp dụng hiệu ứng snap scroll cho trang About Us để không vỡ trang khác */
+html.about-page {
+  height: 100%;
+  scroll-snap-type: y mandatory;
 }
 
 body {
@@ -9,7 +22,6 @@ body {
   color: white;
 }
 
-/* Background */
 .wrapper {
   background-image:
     linear-gradient(rgba(4, 15, 22, 0.8), rgba(4, 15, 22, 0.8)),
@@ -17,10 +29,25 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  background-repeat: no-repeat;
   min-height: 100vh;
 }
 
-/* Navigation*/
+/* Dùng chung hiệu ứng mờ dần */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   2. NAVIGATION (Dùng chung)
+========================================= */
 .navigation {
   background-color: rgba(8, 83, 122, 0.4);
   backdrop-filter: blur(10px);
@@ -56,18 +83,17 @@ body {
   transition: 0.3s;
 }
 
-/* Nhóm nằm bên phải */
 .navigation ul li.push-right {
   margin-left: auto;
 }
 
-/* Thanh tìm kiếm */
 .navigation ul li.nav-search {
   width: 600px;
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 0;
   margin-left: 20px;
+  justify-content: flex-start;
 }
 
 .navigation ul li.nav-search:hover {
@@ -103,6 +129,7 @@ body {
 .nav-search button:hover {
   color: #ff7b00;
 }
+
 .navigation a {
   color: white;
   text-decoration: none;
@@ -114,19 +141,37 @@ body {
   background-color: #ff7b00;
 }
 
-/* sidebar + main */
-.shop-container {
-  display: flex;
-  padding: 30px 40px;
-  gap: 30px;
-  max-width: 1400px;
-  margin: 0 auto;
+/* =========================================
+   3. SHARED COMPONENTS (Tiêu đề, Sidebar box, Footer)
+========================================= */
+.hero-section {
+  text-align: center;
+  margin-top: 40px;
+  animation: fadeIn 1s ease-in-out;
+  grid-area: title;
 }
 
-/* SIDEBAR */
+.main-title {
+  font-size: 80px;
+  letter-spacing: 10px;
+  color: transparent;
+  -webkit-text-stroke: 2px white;
+  text-shadow: 0 0 30px rgba(255, 123, 0, 0.8);
+  margin-bottom: 10px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.sub-title {
+  font-size: 30px;
+  color: #ff7b00;
+  margin-bottom: 25px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
 .sidebar {
   width: 250px;
-  /* flex-shrink: 0; */
 }
 
 .sidebar-box {
@@ -144,6 +189,274 @@ body {
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   color: #ff7b00;
+}
+
+.footer {
+  background: #092635;
+  padding: 40px;
+  text-align: center;
+}
+
+/* =========================================
+   4. TRANG HOME
+========================================= */
+.home-intro-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.hero-desc {
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #dddddd;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn-primary,
+.btn-outline {
+  padding: 15px 35px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background-color: #ff7b00;
+  color: white;
+  border: 2px solid #ff7b00;
+  box-shadow: 0 5px 15px rgba(255, 123, 0, 0.4);
+}
+
+.btn-primary:hover {
+  background-color: #e66a00;
+  transform: translateY(-3px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-outline:hover {
+  background-color: white;
+  color: #092635;
+  transform: translateY(-3px);
+}
+
+.features-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.feature-card {
+  background-color: rgba(8, 83, 122, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: 0.4s;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  background-color: rgba(8, 83, 122, 0.4);
+  border-color: #ff7b00;
+}
+
+.feature-card i {
+  font-size: 50px;
+  color: #ff7b00;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.feature-card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.feature-card p {
+  font-size: 15px;
+  color: #bbbbbb;
+  line-height: 1.6;
+}
+
+.about-snippet {
+  display: flex;
+  background-color: rgba(8, 83, 122, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.about-content {
+  flex: 1;
+  padding: 60px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-content h2 {
+  font-size: 32px;
+  color: #ff7b00;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  font-size: 16px;
+  color: #dddddd;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.read-more {
+  margin-top: 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s;
+}
+
+.read-more:hover {
+  color: #ff7b00;
+}
+
+.about-image {
+  flex: 1;
+  min-height: 400px;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+/* =========================================
+   5. TRANG ABOUT US
+========================================= */
+.Toolbar {
+  background-color: rgba(27, 139, 185, 0.4);
+  border-radius: 10px;
+  position: sticky;
+  top: 90px;
+  z-index: 999;
+}
+
+.Toolbar ul {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid white;
+}
+
+.Toolbar ul li {
+  padding: 1%;
+  margin: 0 10px;
+  list-style-type: none;
+}
+
+.Toolbar li:first-child {
+  margin-left: 10%;
+}
+
+.Toolbar ul li:hover {
+  background-color: gray;
+}
+
+.Toolbar a {
+  color: white;
+  text-decoration: none;
+}
+
+.aboutUs {
+  display: flex;
+  padding: 30px 40px;
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Áp dụng riêng cho sidebar bên trang About Us */
+.aboutUs .sidebar {
+  position: sticky;
+  top: 150px;
+  height: 100%;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.substance {
+  list-style: none;
+}
+
+.substance li {
+  margin-bottom: 12px;
+}
+
+.substance a {
+  color: #cccccc;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.substance a:hover {
+  color: #ffffff;
+  padding-left: 5px;
+}
+
+.website-information {
+  flex: 1;
+}
+
+.content-About-LUMOS,
+.main-title-LUMOS {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.part-of-the-about-us {
+  background-color: rgba(8, 83, 122, 0.3);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 40px;
+  height: 75vh;
+  scroll-snap-align: start;
+  scroll-margin-top: 160px;
+}
+
+/* =========================================
+   6. TRANG CHÍNH (BOOKS, CATEGORIES, AUTHORS)
+========================================= */
+.shop-container {
+  display: flex;
+  padding: 30px 40px;
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .category-list {
@@ -166,13 +479,11 @@ body {
   padding-left: 5px;
 }
 
-/* Main content */
 .main-content {
   flex: 1;
   min-width: 0;
 }
 
-/* Banner */
 .banner-slider {
   position: relative;
   width: 100%;
@@ -219,7 +530,6 @@ body {
   background-color: #e66a00;
 }
 
-/* Thanh Sắp Xếp */
 .toolbar {
   display: flex;
   justify-content: space-between;
@@ -244,14 +554,12 @@ body {
   outline: none;
 }
 
-/* Layout sách */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
 }
 
-/* Thẻ sách */
 .product-card {
   background-color: rgba(8, 83, 122, 0.2);
   backdrop-filter: blur(8px);
@@ -279,7 +587,6 @@ body {
 .product-img-box img {
   width: 100%;
   height: 100%;
-  /* object-fit: cover; */
 }
 
 .book-title {
@@ -297,7 +604,7 @@ body {
 }
 
 .rating {
-  color: #ffd700; /* Màu cho ngôi sao*/
+  color: #ffd700;
   font-size: 12px;
   margin-bottom: 15px;
 }
@@ -330,9 +637,6 @@ body {
   color: #092635;
 }
 
-/* ==============================================================================================================================================================================================
-                                                                                    CATEGORIES(TRANG Danh mucj)
-   ==============================================================================================================================================================================================*/
 .category-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -340,7 +644,6 @@ body {
   margin-top: 10px;
 }
 
-/* Thẻ danh mục */
 .category-card {
   display: flex;
   flex-direction: column;
@@ -364,7 +667,7 @@ body {
   background-color: rgba(8, 83, 122, 0.5);
   border-color: #ff7b00;
 }
-/* Icon */
+
 .category-card i {
   font-size: 50px;
   color: #ff7b00;
@@ -382,11 +685,6 @@ body {
   line-height: 1.4;
 }
 
-/* ==============================================================================================================================================================================================
-                                                                                    AUTHOR (TRANG TÁC GIẢ)
-   ==============================================================================================================================================================================================
- */
-
 .author-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -394,7 +692,6 @@ body {
   margin-top: 10px;
 }
 
-/* Thẻ info tác giả */
 .author-card {
   background-color: rgba(8, 83, 122, 0.2);
   backdrop-filter: blur(8px);
@@ -415,7 +712,6 @@ body {
   border-color: rgba(255, 255, 255, 0.3);
 }
 
-/* Khung tròn */
 .author-img-box {
   width: 130px;
   height: 130px;
@@ -467,4 +763,325 @@ body {
   background-color: #ff7b00;
   color: white;
   box-shadow: 0 0 10px rgba(255, 123, 0, 0.5);
+}
+
+/* =========================================
+   7. FORM CHUNG (LOGIN & SIGNUP)
+========================================= */
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #dddddd;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  padding: 0 15px;
+  height: 45px;
+}
+
+.input-container .icon {
+  color: #555;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.input-container input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 14px;
+  height: 100%;
+  color: #333;
+  background: transparent;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+input[type="date"] {
+  font-family: "Noto Sans", sans-serif;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  font-size: 13px;
+  color: #cccccc;
+}
+
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.separator span {
+  padding: 0 10px;
+}
+
+.social-login {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.social-icon {
+  width: 45px;
+  height: 45px;
+  background-color: white;
+  color: #333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+  background-color: #ff7b00;
+  color: white;
+}
+
+/* =========================================
+   8. LOGIN SPECIFIC
+========================================= */
+section.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8%;
+  margin: 100px 125px 0px 0px;
+}
+
+.slogan {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 210px;
+}
+
+.slogan img {
+  max-width: 100%;
+  width: 950px;
+  height: auto;
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
+}
+
+.login-form {
+  width: 420px;
+  background-color: rgba(8, 83, 122, 0.4);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 34px;
+  color: white;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  flex-shrink: 0;
+}
+
+.login-form h2 {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.forgot-pass {
+  text-align: right;
+  margin-top: -10px;
+  margin-bottom: 25px;
+}
+
+.forgot-pass a {
+  color: white;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.btn-login {
+  width: 100%;
+  padding: 14px;
+  background-color: #092635;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-login:hover {
+  background-color: #044869;
+}
+
+.signup-text {
+  text-align: center;
+  font-size: 14px;
+}
+
+.signup-text a {
+  color: #ff7b00;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* =========================================
+   9. SIGNUP SPECIFIC
+========================================= */
+section.signup-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 8%;
+  min-height: calc(100vh - 90px);
+}
+
+.signup-form {
+  width: 450px;
+  background-color: rgba(8, 83, 122, 0.4);
+  backdrop-filter: blur(10px);
+  padding: 30px 40px;
+  border-radius: 34px;
+  color: white;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  flex-shrink: 0;
+}
+
+.signup-form h2 {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #cccccc;
+  margin-bottom: 20px;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin-right: 8px;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.checkbox-group label {
+  color: #dddddd;
+}
+
+.checkbox-group a {
+  color: #ff7b00;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 12px;
+  background-color: #092635;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: #ff7b00;
+  box-shadow: 0 5px 15px rgba(255, 123, 0, 0.4);
+}
+
+.signin-text {
+  text-align: center;
+  font-size: 13px;
+  color: #dddddd;
+}
+
+.signin-text a {
+  color: #ff7b00;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* =========================================
+   10. RESPONSIVE DESIGN (Điện thoại)
+========================================= */
+@media screen and (max-width: 768px) {
+  .navigation {
+    padding: 15px 10px;
+  }
+
+  .navigation ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navigation ul img {
+    flex-basis: 100%;
+    height: 70px !important;
+    object-fit: contain;
+    margin: 0 0 15px 0 !important;
+  }
+
+  .navigation ul li {
+    margin: 5px;
+    width: 75px;
+    height: 35px;
+  }
+
+  .navigation a {
+    font-size: 13px;
+  }
+
+  .navigation ul li:nth-child(4) {
+    margin-left: 5px;
+  }
+
+  section.login-container,
+  section.signup-container {
+    flex-direction: column;
+    padding: 30px 5%;
+  }
+
+  .slogan {
+    padding-right: 0;
+    width: 100%;
+  }
+
+  .slogan img {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .login-form,
+  .signup-form {
+    width: 100%;
+    padding: 30px 20px;
+  }
 }
