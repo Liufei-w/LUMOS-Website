@@ -761,7 +761,6 @@ body {
 /* =========================================
    7. FORM CHUNG (LOGIN & SIGNUP)
 ========================================= */
-/* Đã đổi tên class tránh đụng độ với class mặc định của Bootstrap */
 .custom-input-group label {
   display: block;
   margin-bottom: 6px;
