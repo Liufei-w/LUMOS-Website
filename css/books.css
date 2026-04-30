@@ -32,10 +32,13 @@ body {
   min-height: 100vh;
 }
 
-@keyframes fadeIn {
+/* =========================================
+   HIỆU ỨNG CHUYỂN TRANG
+========================================= */
+@keyframes popIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(15px);
   }
   to {
     opacity: 1;
@@ -43,8 +46,35 @@ body {
   }
 }
 
+/* .navigation {
+  animation: popIn 0.3s ease-out forwards;
+} */
+
+.login-form,
+.carousel,
+.toolbar,
+.website-information,
+.features-section,
+.slogan,
+.signup-form,
+.sidebar,
+.sidebar-box,
+.hero-section {
+  opacity: 0;
+  animation: popIn 0.3s ease-out 0.2s forwards;
+}
+
+.main-content .row, 
+.about-snippet,
+.author-card,
+.category-card,
+.product-card {
+  opacity: 0;
+  animation: popIn 0.3s ease-out 0.4s forwards;
+}
+
 /* =========================================
-   2. NAVIGATION
+   2. NAVIGATION 
 ========================================= */
 .navigation {
   background-color: rgba(8, 83, 122, 0.4);
@@ -52,45 +82,42 @@ body {
   padding: 10px 40px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   border-radius: 0 0 14px 14px;
-  position: sticky;
-  top: 0;
   z-index: 1000;
-}
-
-.navigation ul {
-  display: flex;
-  align-items: center;
 }
 
 .logo-img {
   width: 75px;
   height: 70px;
-  margin: 0 20px;
 }
 
-.navigation ul li {
-  list-style: none;
-  margin: 0 10px;
+.nav-btn {
   height: 40px;
   width: 100px;
   background-color: #092635;
-  border-radius: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   transition: 0.3s;
 }
 
-.navigation ul li.nav-search {
-  width: 600px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 0;
-  margin-left: 20px;
-  justify-content: flex-start;
+.nav-btn:hover {
+  background-color: #ff7b00;
 }
 
-.navigation ul li.nav-search:hover {
+.navigation a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.nav-search {
+  width: 600px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-left: 20px;
+  transition: 0.3s;
+}
+
+.nav-search:hover {
   background-color: rgba(255, 255, 255, 0.15);
 }
 
@@ -100,8 +127,6 @@ body {
   outline: none;
   color: white;
   padding-left: 15px;
-  width: 100%;
-  height: 100%;
   font-size: 14px;
 }
 
@@ -114,7 +139,6 @@ body {
   border: none;
   color: white;
   padding: 0 15px;
-  height: 100%;
   cursor: pointer;
   font-size: 16px;
   transition: 0.3s;
@@ -124,24 +148,12 @@ body {
   color: #ff7b00;
 }
 
-.navigation a {
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.navigation ul li:hover {
-  background-color: #ff7b00;
-}
-
 /* =========================================
-   3. SHARED COMPONENTS
+   3. CÁC THÀNH PHẦN CHUNG
 ========================================= */
 .hero-section {
   text-align: center;
   margin-top: 40px;
-  animation: fadeIn 1s ease-in-out;
   grid-area: title;
 }
 
@@ -152,7 +164,6 @@ body {
   -webkit-text-stroke: 2px white;
   text-shadow: 0 0 30px rgba(255, 123, 0, 0.8);
   margin-bottom: 10px;
-  animation: fadeIn 1s ease-in-out;
 }
 
 .sub-title {
@@ -205,16 +216,9 @@ body {
 
 .hero-desc {
   max-width: 700px;
-  margin: 0 auto 40px auto;
   font-size: 18px;
   line-height: 1.6;
   color: #dddddd;
-}
-
-.hero-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
 }
 
 .btn-primary,
@@ -441,16 +445,10 @@ body {
   scroll-margin-top: 160px;
 }
 
+
 /* =========================================
    6. TRANG CHÍNH (BOOKS, CATEGORIES, AUTHORS)
 ========================================= */
-.shop-container {
-  display: flex;
-  padding: 30px 40px;
-  gap: 30px;
-  max-width: 1400px;
-  margin: 0 auto;
-}
 
 .category-list {
   list-style: none;
@@ -470,57 +468,7 @@ body {
 .category-list a:hover {
   color: #ffffff;
   padding-left: 5px;
-}
-
-.main-content {
-  flex: 1;
-  min-width: 0;
-}
-
-.banner-slider {
-  position: relative;
-  width: 100%;
-  height: 300px;
-  border-radius: 16px;
-  overflow: hidden;
-  margin-bottom: 30px;
-  background-color: #092635;
-}
-
-.banner-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.6;
-}
-
-.banner-text {
-  position: absolute;
-  top: 50%;
-  left: 40px;
-  transform: translateY(-50%);
-}
-
-.banner-text h2 {
-  font-size: 36px;
-  margin-bottom: 10px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
-}
-
-.btn-shop {
-  margin-top: 15px;
-  padding: 10px 25px;
-  background-color: #ff7b00;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;
-}
-
-.btn-shop:hover {
-  background-color: #e66a00;
 }
 
 .toolbar {
@@ -545,12 +493,7 @@ body {
   padding: 8px 15px;
   border-radius: 8px;
   outline: none;
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
+  cursor: pointer;
 }
 
 .product-card {
@@ -560,6 +503,7 @@ body {
   border-radius: 12px;
   padding: 15px;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .product-card:hover {
@@ -602,12 +546,6 @@ body {
   margin-bottom: 15px;
 }
 
-.price-action {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .price {
   font-size: 18px;
   font-weight: bold;
@@ -628,13 +566,6 @@ body {
 .btn-add:hover {
   background: white;
   color: #092635;
-}
-
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 25px;
-  margin-top: 10px;
 }
 
 .category-card {
@@ -676,13 +607,6 @@ body {
   font-size: 16px;
   font-weight: bold;
   line-height: 1.4;
-}
-
-.author-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 30px;
-  margin-top: 10px;
 }
 
 .author-card {
@@ -757,6 +681,7 @@ body {
   color: white;
   box-shadow: 0 0 10px rgba(255, 123, 0, 0.5);
 }
+
 
 /* =========================================
    7. FORM CHUNG (LOGIN & SIGNUP)
@@ -841,7 +766,7 @@ input[type="date"] {
 }
 
 /* =========================================
-   8. LOGIN SPECIFIC
+   8. LOGIN 
 ========================================= */
 section.login-container {
   display: flex;
@@ -895,7 +820,7 @@ section.login-container {
 }
 
 /* =========================================
-   9. SIGNUP SPECIFIC
+   9. SIGNUP 
 ========================================= */
 section.signup-container {
   display: flex;
@@ -935,7 +860,7 @@ section.signup-container {
 }
 
 /* =========================================
-   10. RESPONSIVE DESIGN (Điện thoại)
+   10. RESPONSIVE (Điện thoại)
 ========================================= */
 @media screen and (max-width: 768px) {
   .navigation {

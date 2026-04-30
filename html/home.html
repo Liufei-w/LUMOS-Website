@@ -4,36 +4,53 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LUMOS - Light Up Your Mind</title>
+
     <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/bootstrap-icons-1.13.1/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../css/books.css" />
 
     <script src="../js/jquery-4.0.0.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
-    
+    <script src="../js/main.js"></script>
     <link rel="icon" type="image/x-icon" href="../img/logo-favicon.png" />
   </head>
   <body>
     <div class="wrapper">
-      <nav class="navigation">
-        <ul>
-          <a href="home.html"><img src="../img/logo.png" alt="logo" class="logo-img" /></a>
-          <li><a href="home.html" style="color: #ff7b00">Home</a></li>
-          <li><a href="about_us.html">About Us</a></li>
-          <li><a href="books.html">Books</a></li>
-          <li><a href="category.html">Categories</a></li>
-          <li><a href="authors.html">Authors</a></li>
+      <nav class="navigation sticky-top">
+        <ul class="list-unstyled m-0 p-0 d-flex align-items-center w-100">
+          
+          <a href="home.html" class="me-3"><img src="../img/logo.png" alt="logo" class="logo-img" /></a>
+          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
+            <a href="home.html" style="color: #ff7b00">Home</a>
+          </li>
+          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
+            <a href="about_us.html">About Us</a>
+          </li>
+          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
+            <a href="books.html">Books</a>
+          </li>
+          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
+            <a href="category.html">Categories</a>
+          </li>
+          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
+            <a href="authors.html">Authors</a>
+          </li>
 
-          <li class="nav-search">
-            <input type="text" placeholder="Search for books and authors..." />
+          <li class="nav-search d-flex align-items-center rounded-pill">
+            <input type="text" placeholder="Search for books and authors..." class="flex-grow-1" />
             <button type="submit"><i class="bi bi-search"></i></button>
           </li>
 
-          <li class="push-right">
+          <li class="nav-btn ms-auto mx-2 d-flex justify-content-center align-items-center rounded-pill">
             <a href="#">Cart <i class="bi bi-cart2"></i></a>
           </li>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="signup.html">Sign up</a></li>
+          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
+            <a href="login.html">Login</a>
+          </li>
+          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
+            <a href="signup.html">Sign up</a>
+          </li>
+          
         </ul>
       </nav>
 
@@ -41,12 +58,14 @@
         <section class="hero-section">
           <h1 class="main-title">LUMOS</h1>
           <h2 class="sub-title">Light Up Your Mind</h2>
-          <p class="hero-desc">
+          
+          <p class="hero-desc mx-auto mb-4 text-light">
             Welcome to the LUMOS Night Library. Here, thousands of pieces of
             knowledge are stored beneath the pages of books, waiting for you to
             discover and illuminate.
           </p>
-          <div class="hero-buttons">
+          
+          <div class="d-flex justify-content-center gap-4">
             <a href="books.html" class="btn-primary">Explore Books</a>
             <a href="signup.html" class="btn-outline">Join Our Community</a>
           </div>
@@ -91,7 +110,8 @@
               is carefully selected to provide real value to our readers.
             </p>
             <p>Let us accompany you on your journey to "Light Up Your Mind".</p>
-            <a href="#" class="read-more"
+            
+            <a href="#" class="read-more mt-3"
               >Read more about us <i class="bi bi-arrow-right"></i
             ></a>
           </div>

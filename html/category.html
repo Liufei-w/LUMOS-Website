@@ -10,91 +10,122 @@
 
     <script src="../js/jquery-4.0.0.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
-    
+    <script src="../js/main.js"></script>
     <link rel="icon" type="image/x-icon" href="../img/logo-favicon.png" />
   </head>
   <body>
     <div class="wrapper">
-      <nav class="navigation">
-        <ul>
-          <a href="home.html"><img src="../img/logo.png" alt="logo" class="logo-img" /></a>
-          <li><a href="home.html">Home</a></li>
-          <li><a href="about_us.html">About Us</a></li>
-          <li><a href="books.html">Books</a></li>
-          <li><a href="category.html" style="color: #ff7b00;">Categories</a></li>
-          <li><a href="authors.html">Authors</a></li>
-          <li class="nav-search">
-            <input type="text" placeholder="Search for books and authors..." />
+      <nav class="navigation sticky-top">
+        <ul class="list-unstyled m-0 p-0 d-flex align-items-center w-100">
+          
+          <a href="home.html" class="me-3"><img src="../img/logo.png" alt="logo" class="logo-img" /></a>
+          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
+            <a href="home.html">Home</a>
+          </li>
+          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
+            <a href="about_us.html">About Us</a>
+          </li>
+          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
+            <a href="books.html">Books</a>
+          </li>
+          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
+            <a href="category.html" style="color: #ff7b00">Categories</a>
+          </li>
+          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
+            <a href="authors.html">Authors</a>
+          </li>
+
+          <li class="nav-search d-flex align-items-center rounded-pill">
+            <input type="text" placeholder="Search for books and authors..." class="flex-grow-1" />
             <button type="submit"><i class="bi bi-search"></i></button>
           </li>
 
-          <li class="push-right">
+          <li class="nav-btn ms-auto mx-2 d-flex justify-content-center align-items-center rounded-pill">
             <a href="#">Cart <i class="bi bi-cart2"></i></a>
           </li>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="signup.html">Sign up</a></li>
+          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
+            <a href="login.html">Login</a>
+          </li>
+          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
+            <a href="signup.html">Sign up</a>
+          </li>
+          
         </ul>
       </nav>
 
-      <div class="shop-container">
-        <aside class="sidebar">
-          <div class="sidebar-box">
-            <h3>Catalog Book</h3>
-            <ul class="category-list">
-              <li><a href="#">Novel - Literature</a></li>
-              <li><a href="#">Science Fiction</a></li>
-              <li><a href="#">Programming - Technology</a></li>
-              <li><a href="#">Life skills</a></li>
-              <li><a href="#">Foreign literature books</a></li>
-            </ul>
-          </div>
+      <div class="container-fluid py-4 px-md-5" style="max-width: 1400px;">
+        <div class="row gy-4">
+          
+          <!-- SIDEBAR -->
+          <aside class="col-12 col-md-4 col-lg-3">
+            <div class="sidebar-box">
+              <h3>Catalog Book</h3>
+              <ul class="category-list m-0 p-0">
+                <li><a href="#">Novel - Literature</a></li>
+                <li><a href="#">Science Fiction</a></li>
+                <li><a href="#">Programming - Technology</a></li>
+                <li><a href="#">Life skills</a></li>
+                <li><a href="#">Foreign literature books</a></li>
+              </ul>
+            </div>
 
-          <div class="sidebar-box">
-            <h3>Filter by price</h3>
-            <ul class="category-list">
-              <li><a href="#">Under 100.000đ</a></li>
-              <li><a href="#">100.000đ - 300.000đ</a></li>
-              <li><a href="#">Over 300.000đ</a></li>
-            </ul>
-          </div>
-        </aside>
+            <div class="sidebar-box">
+              <h3>Filter by price</h3>
+              <ul class="category-list m-0 p-0">
+                <li><a href="#">Under 100.000đ</a></li>
+                <li><a href="#">100.000đ - 300.000đ</a></li>
+                <li><a href="#">Over 300.000đ</a></li>
+              </ul>
+            </div>
+          </aside>
 
-        <main class="main-content">
-          <div class="toolbar">
-            <h2>CATEGORIES</h2>
+          <!-- MAIN CONTENT -->
+          <main class="col-12 col-md-8 col-lg-9">
+            <div class="toolbar mb-4">
+              <h2 class="m-0">CATEGORIES</h2>
             </div>
             
-          <div class="category-grid">
-            
-            <a href="#" class="category-card">
-              <i class="bi bi-book"></i>
-              <h3>Novel - Literature</h3>
-            </a>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+              
+              <div class="col">
+                <a href="#" class="category-card h-100">
+                  <i class="bi bi-book"></i>
+                  <h3>Novel - Literature</h3>
+                </a>
+              </div>
 
-            <a href="#" class="category-card">
-              <i class="bi bi-rocket-takeoff"></i>
-              <h3>Science Fiction</h3>
-            </a>
+              <div class="col">
+                <a href="#" class="category-card h-100">
+                  <i class="bi bi-rocket-takeoff"></i>
+                  <h3>Science Fiction</h3>
+                </a>
+              </div>
 
-            <a href="#" class="category-card">
-              <i class="bi bi-laptop"></i>
-              <h3>Programming - Technology</h3>
-            </a>
+              <div class="col">
+                <a href="#" class="category-card h-100">
+                  <i class="bi bi-laptop"></i>
+                  <h3>Programming - Technology</h3>
+                </a>
+              </div>
 
-            <a href="#" class="category-card">
-              <i class="bi bi-person-workspace"></i>
-              <h3>Life skills</h3>
-            </a>
+              <div class="col">
+                <a href="#" class="category-card h-100">
+                  <i class="bi bi-person-workspace"></i>
+                  <h3>Life skills</h3>
+                </a>
+              </div>
 
-            <a href="#" class="category-card">
-              <i class="bi bi-globe"></i>
-              <h3>Foreign literature books</h3>
-            </a>
+              <div class="col">
+                <a href="#" class="category-card h-100">
+                  <i class="bi bi-globe"></i>
+                  <h3>Foreign literature books</h3>
+                </a>
+              </div>
 
-          </div>
+            </div>
           </main>
             
-        </main>
+        </div>
       </div>
     </div>
   </body>
