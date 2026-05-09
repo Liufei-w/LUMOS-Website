@@ -1,4 +1,55 @@
 $(document).ready(function () {
+
+// KIỂM TRA ĐĂNG KÝ
+  $("#formDangKy").on("submit", function (e) {
+    e.preventDefault();
+
+    let ten = $("#ten").val();
+    let ngaySinh = $("#ngaySinh").val();
+    let email = $("#email").val();
+    let matKhau = $("#matKhau").val();
+    let dieuKhoan = $("#dieuKhoan").is(":checked");
+
+    if (ten === "") {
+      alert("Vui lòng nhập họ tên!");
+      return;
+    }
+
+    if (ngaySinh === "") {
+      alert("Vui lòng chọn ngày sinh!");
+      return;
+    }
+
+    const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailReg.test(email)) {
+      alert("Email không hợp lệ!");
+      return;
+    }
+
+    if (matKhau.length < 6) {
+      alert("Mật khẩu phải có ít nhất 6 ký tự!");
+      return;
+    }
+
+    if (!dieuKhoan) {
+      alert("Bạn phải đồng ý với điều khoản sử dụng!");
+      return;
+    }
+
+    let thongBaoThanhCong = `
+      ĐĂNG KÝ THÀNH CÔNG!
+      --------------------
+      Họ tên: ${ten}
+      Ngày sinh: ${ngaySinh}
+      Email: ${email}
+      Mật khẩu: ${"*".repeat(matKhau.length)} (Đã mã hóa)
+    `;
+
+    alert(thongBaoThanhCong);
+  });
+
+
+
     // ==========================================
     // SORT SÁCH TĂNG GIẢM
     // ==========================================
@@ -60,9 +111,74 @@ $(document).ready(function () {
   }
 
 
-    // ==========================================
-    // CART: TĂNG/GIẢM SỐ LƯỢNG + TÍNH TỔNG TIỀN
-    // ==========================================
+// ==========================================
+  // XỬ LÝ TRANG CATEGORIES (Click danh mục hiện sách)
+  // ==========================================
+  let $categoryLinks = $(".category-link");
+  let $categoryGrid = $("#category-grid");
+  let $categoryBooksGrid = $("#category-books-grid");
+  let $categoryTitle = $("#category-title");
+  let $btnBackCategories = $("#btn-back-categories");
+
+  if ($categoryGrid.length > 0) {
+  
+    $categoryLinks.on("click", function (e) {
+      e.preventDefault();
+      
+      let catName = $(this).data("name");
+
+      $categoryGrid.fadeOut(200, function () {
+        $categoryTitle.text(catName);
+        $btnBackCategories.fadeIn(200);
+        $categoryBooksGrid.fadeIn(300);
+      });
+    });
+
+    $btnBackCategories.on("click", function () {
+      $categoryBooksGrid.fadeOut(200, function () {
+        $btnBackCategories.hide();
+        $categoryTitle.text("CATEGORIES");
+        $categoryGrid.fadeIn(300);
+      });
+    });
+  }
+
+
+  // ==========================================
+  // XỬ LÝ TRANG AUTHORS (Click tác giả hiện sách)
+  // ==========================================
+  const $authorLinks = $(".author-link");
+  const $authorGrid = $("#author-grid");
+  const $authorBooksGrid = $("#author-books-grid");
+  const $authorTitle = $("#author-title");
+  const $btnBackAuthors = $("#btn-back-authors");
+
+  if ($authorGrid.length > 0) {
+    $authorLinks.on("click", function (e) {
+      e.preventDefault();
+      
+      const authorName = $(this).data("name");
+      $authorGrid.fadeOut(200, function () {
+        $authorTitle.text(authorName);
+        $btnBackAuthors.fadeIn(200);
+        $authorBooksGrid.fadeIn(300);
+      });
+    });
+
+    $btnBackAuthors.on("click", function () {
+      
+      $authorBooksGrid.fadeOut(200, function () {
+        $btnBackAuthors.hide();
+        $authorTitle.text("AUTHORS");
+        $authorGrid.fadeIn(300);
+      });
+    });
+  }
+
+// ==========================================
+// CART: TĂNG/GIẢM SỐ LƯỢNG + TÍNH TỔNG TIỀN
+// ==========================================
+const cartItems = $(".cart-item");
 
     const formatMoney = n => n.toLocaleString("vi-VN") + "đ";
     const getCart = () => JSON.parse(localStorage.getItem("cart")) || [];
