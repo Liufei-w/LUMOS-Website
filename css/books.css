@@ -64,7 +64,7 @@ body {
   animation: popIn 0.3s ease-out 0.2s forwards;
 }
 
-.main-content .row, 
+.main-content .row,
 .about-snippet,
 .author-card,
 .category-card,
@@ -445,7 +445,6 @@ body {
   scroll-margin-top: 160px;
 }
 
-
 /* =========================================
    6. TRANG CHÍNH (BOOKS, CATEGORIES, AUTHORS)
 ========================================= */
@@ -682,7 +681,6 @@ body {
   box-shadow: 0 0 10px rgba(255, 123, 0, 0.5);
 }
 
-
 /* =========================================
    7. FORM CHUNG (LOGIN & SIGNUP)
 ========================================= */
@@ -773,7 +771,6 @@ section.login-container {
   align-items: center;
   justify-content: space-between;
   padding: 0 8%;
-  margin: 100px 125px 0px 0px;
 }
 
 .slogan {
@@ -1371,7 +1368,56 @@ section.signup-container {
   transition: 0.3s;
 }
 .dropdown-item.custom-hover:hover {
+  background-color: #ff7b00;
+  color: white;
+  padding-left: 20px;
+}}
+
+
+/* =========================================
+   11. BREADCRUMB (Thanh điều hướng phụ)
+========================================= */
+.custom-breadcrumb .breadcrumb-item a {
+  color: #cccccc;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.custom-breadcrumb .breadcrumb-item a:hover {
+  color: #ff7b00;
+}
+
+/* Màu của dấu mũi tên phân cách (>) */
+.custom-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+  color: #888888;
+  font-size: 14px;
+}
+
+/* Màu của trang hiện tại */
+.custom-breadcrumb .breadcrumb-item.active {
+  color: #ff7b00;
+  font-weight: bold;
+  font-size: 14px;
+}
+/*about us page*/
+.custom-hover-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  background-color: rgba(8, 83, 122, 0.5) !important;
+  border: 1px solid rgba(255, 123, 0, 0.1) !important;
+}
+.custom-hover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3) !important;
+  border-color: rgba(255, 123, 0, 0.5) !important;
+}
+.play-btn-hover:hover {
+  transform: scale(1.1);
   background-color: #ff7b00 !important;
   color: white !important;
-  padding-left: 20px;
+}
+.play-btn-hover:hover i {
+  color: white !important;
 }

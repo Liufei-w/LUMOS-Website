@@ -4,9 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LUMOS - Light Up Your Mind</title>
-    
-    <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/bootstrap-icons-1.13.1/bootstrap-icons.min.css">
+
+    <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="../css/bootstrap-icons-1.13.1/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="../css/books.css" />
 
     <script src="../js/jquery-4.0.0.js"></script>
@@ -14,109 +17,565 @@
     <script src="../js/main.js"></script>
     <link rel="icon" type="image/x-icon" href="../img/logo-favicon.png" />
   </head>
-<body>
-  <div class="wrapper">
-    <nav class="navigation sticky-top">
+  <body>
+    <div class="wrapper">
+      <nav class="navigation sticky-top">
         <ul class="list-unstyled m-0 p-0 d-flex align-items-center w-100">
-          
-          <a href="index.html" class="me-3"><img src="../img/logo.png" alt="logo" class="logo-img" /></a>
-          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
+          <a href="index.html" class="me-3"
+            ><img src="../img/logo.png" alt="logo" class="logo-img"
+          /></a>
+          <li
+            class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill"
+          >
             <a href="index.html">Home</a>
           </li>
-          
-          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill dropdown">
-            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="color: #ff7b00; cursor: pointer;">
+
+          <li
+            class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill dropdown"
+          >
+            <a
+              href="#"
+              class="dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              style="color: #ff7b00; cursor: pointer"
+            >
               About Us
             </a>
-            <ul class="dropdown-menu mt-3" style="background-color: rgba(9, 38, 53, 0.95); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); overflow: hidden;">
-              <li><a class="dropdown-item text-white py-2 custom-hover" href="about_us.html">About LUMOS</a></li>
-              <li><a class="dropdown-item text-white py-2 custom-hover" href="../html/about_us/member.html">Member</a></li>
-              <li><a class="dropdown-item text-white py-2 custom-hover" href="../html/about_us/sitemap.html">Sitemap</a></li>
+            <ul
+              class="dropdown-menu mt-3"
+              style="
+                background-color: rgba(9, 38, 53, 0.95);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 14px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+                overflow: hidden;
+              "
+            >
+              <li>
+                <a
+                  class="dropdown-item text-white py-2 custom-hover"
+                  href="about_us.html"
+                  >About LUMOS</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item text-white py-2 custom-hover"
+                  href="../html/about_us/member.html"
+                  >Member</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item text-white py-2 custom-hover"
+                  href="../html/about_us/sitemap.html"
+                  >Sitemap</a
+                >
+              </li>
             </ul>
           </li>
-  
-          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
+
+          <li
+            class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill"
+          >
             <a href="books.html">Books</a>
           </li>
-          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
+          <li
+            class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill"
+          >
             <a href="category.html">Categories</a>
           </li>
-          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
+          <li
+            class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill"
+          >
             <a href="authors.html">Authors</a>
           </li>
 
           <li class="nav-search d-flex align-items-center rounded-pill">
-            <input type="text" placeholder="Search for books and authors..." class="flex-grow-1" />
+            <input
+              type="text"
+              placeholder="Search for books and authors..."
+              class="flex-grow-1"
+            />
             <button type="submit"><i class="bi bi-search"></i></button>
           </li>
 
-          <li class="nav-btn ms-auto mx-2 d-flex justify-content-center align-items-center rounded-pill">
+          <li
+            class="nav-btn ms-auto mx-2 d-flex justify-content-center align-items-center rounded-pill"
+          >
             <a href="cart.html">Cart <i class="bi bi-cart2"></i></a>
           </li>
-          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
+          <li
+            class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill"
+          >
             <a href="login.html">Login</a>
           </li>
-          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
+          <li
+            class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill"
+          >
             <a href="signup.html">Sign up</a>
           </li>
-          
         </ul>
       </nav>
 
-    <div class="aboutUs">
-      <aside class="sidebar">
-        <div class="sidebar-box">
-          <h3>Substance</h3>
-          <ul class="substance">
-            <li><a href="#aboutLUMOS">About LUMOS</a></li>
-            <li><a href="#offer">What We Offer</a></li>
-            <li><a href="#vision">Our Vision</a></li>
-            <li><a href="#journey">Join the Journey</a></li>
-          </ul>
+      <!-- Sử dụng Container-fluid và Row để tạo tính Responsive -->
+      <div class="container-fluid py-4 px-md-5" style="max-width: 1400px">
+        <div class="row gy-4">
+          <!-- SIDEBAR RESPONSIVE -->
+          <aside class="col-12 col-md-4 col-lg-3">
+            <div class="sidebar-box mb-4">
+              <h3>Catalog Book</h3>
+              <ul class="category-list m-0 p-0">
+                <li><a href="#AboutUs">About LUMOS</a></li>
+                <li><a href="#whatWeOffer">What We Offer</a></li>
+                <li><a href="#OurVision">Our Vision</a></li>
+                <li><a href="#JointheJourney">Join the Journey</a></li>
+              </ul>
+            </div>
+          </aside>
+
+          <!-- MAIN CONTENT RESPONSIVE -->
+          <main class="col-12 col-md-8 col-lg-9 website-information">
+            <!-- 1. ABOUT LUMOS -->
+            <div id="aboutLUMOS" class="mb-5 pb-4">
+              <div class="row align-items-center g-4">
+                <div class="col-xl-6">
+                  <h1 class="display-5 fw-bold mb-2" style="color: #ff7b00">
+                    About LUMOS
+                  </h1>
+                  <h4 class="text-secondary mb-4">Light Up Your Mind</h4>
+                  <p class="text-light" style="line-height: 1.7">
+                    LUMOS - Night Library is an online book platform dedicated
+                    to inspiring minds through the power of reading. Guided by
+                    our message “Light Up Your Mind,” we aim to create a space
+                    where knowledge is accessible, engaging, and transformative
+                    for readers everywhere.
+                  </p>
+                  <p class="text-white-50" style="line-height: 1.7">
+                    In today's fast-paced digital world, discovering quality
+                    books should be simple and enjoyable. LUMOS offers a
+                    carefully curated collection of titles across diverse
+                    genres.
+                  </p>
+                  <a
+                    href="#offer"
+                    class="btn rounded-pill px-4 py-2 mt-3 text-white fw-bold shadow-sm"
+                    style="background-color: #ff7b00; transition: opacity 0.3s"
+                  >
+                    Discover More
+                  </a>
+                </div>
+                <div class="col-xl-6 d-none d-lg-block">
+                  <!-- Chỉ hiện ảnh trên màn hình lớn để tránh tràn layout -->
+                  <div class="row g-3">
+                    <div class="col-6">
+                      <img
+                        src="../img/book/EastodEden.jpg"
+                        class="img-fluid rounded-4 w-100 object-fit-cover shadow-lg"
+                        style="height: 420px"
+                        alt="Library"
+                      />
+                    </div>
+                    <div class="col-6 d-flex flex-column gap-3">
+                      <img
+                        src="../img/book/TheCountofMonteCristo.jpg"
+                        class="img-fluid rounded-4 w-100 object-fit-cover shadow-lg"
+                        style="height: 202px"
+                        alt="Books"
+                      />
+                      <img
+                        src="../img/book/TheCallofTheWild.jpg"
+                        class="img-fluid rounded-4 w-100 object-fit-cover shadow-lg"
+                        style="height: 202px"
+                        alt="Reading"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. WHAT WE OFFER -->
+            <div id="offer" class="mb-5 pb-4">
+              <h2 class="fw-bold text-light mb-4" id="whatWeOffer">
+                What We Offer
+              </h2>
+              <div class="row row-cols-1 row-cols-md-2 row-cols-xl-2 g-4">
+                <div class="col">
+                  <div class="card h-100 rounded-4 p-3 custom-hover-card">
+                    <div class="card-body">
+                      <i
+                        class="bi bi-grid-fill fs-1 d-block mb-3"
+                        style="color: #ff7b00"
+                      ></i>
+                      <h5 class="card-title fw-bold text-light mb-3">
+                        Wide Selection
+                      </h5>
+                      <p class="card-text text-white-50 small">
+                        Our platform features a diverse range of books from
+                        various categories, allowing users to easily browse,
+                        search, and discover titles.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100 rounded-4 p-3 custom-hover-card">
+                    <div class="card-body">
+                      <i
+                        class="bi bi-laptop fs-1 d-block mb-3"
+                        style="color: #ff7b00"
+                      ></i>
+                      <h5 class="card-title fw-bold text-light mb-3">
+                        User-Friendly
+                      </h5>
+                      <p class="card-text text-white-50 small">
+                        With a modern interface and intuitive navigation, LUMOS
+                        ensures a smooth and comfortable browsing experience.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100 rounded-4 p-3 custom-hover-card">
+                    <div class="card-body">
+                      <i
+                        class="bi bi-people-fill fs-1 d-block mb-3"
+                        style="color: #ff7b00"
+                      ></i>
+                      <h5 class="card-title fw-bold text-light mb-3">
+                        Community
+                      </h5>
+                      <p class="card-text text-white-50 small">
+                        LUMOS is more than just a bookstore. We aim to build a
+                        community of passionate readers who believe in lifelong
+                        learning.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100 rounded-4 p-3 custom-hover-card">
+                    <div class="card-body">
+                      <i
+                        class="bi bi-lightbulb-fill fs-1 d-block mb-3"
+                        style="color: #ff7b00"
+                      ></i>
+                      <h5 class="card-title fw-bold text-light mb-3">
+                        Inspiration
+                      </h5>
+                      <p class="card-text text-white-50 small">
+                        We believe every book holds the potential to spark
+                        change. Expand your understanding and unlock new
+                        opportunities.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. OUR VISION -->
+            <div id="vision" class="mb-5 pb-4">
+              <div
+                class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center mb-4 gap-2"
+              >
+                <h2 class="fw-bold text-light m-0" id="OurVision">
+                  Our Vision
+                </h2>
+                <a
+                  href="#"
+                  class="btn btn-outline-secondary rounded-pill btn-sm text-light px-3"
+                  >See our manifesto</a
+                >
+              </div>
+              <div class="row g-4">
+                <div class="col-xl-6">
+                  <div
+                    class="card border-0 rounded-4 overflow-hidden h-100 shadow-lg position-relative custom-hover-card min-vh-50"
+                  >
+                    <img
+                      src="../img/book/home.jpg"
+                      class="card-img h-100 object-fit-cover"
+                      style="min-height: 250px"
+                      alt="Vision Target"
+                    />
+                    <div
+                      class="card-img-overlay d-flex flex-column justify-content-end p-4"
+                      style="
+                        background: linear-gradient(
+                          to top,
+                          rgba(0, 0, 0, 0.9),
+                          rgba(0, 0, 0, 0)
+                        );
+                      "
+                    >
+                      <span
+                        class="badge mb-2 align-self-start"
+                        style="background-color: #ff7b00"
+                        >Goal 2026</span
+                      >
+                      <h4 class="text-white fw-bold mb-2">
+                        A Trusted Digital Destination
+                      </h4>
+                      <p class="text-white-50 small mb-0">
+                        Making learning more accessible and enjoyable in the
+                        modern age.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-6 d-flex flex-column gap-4">
+                  <div
+                    class="card border-0 rounded-4 p-3 shadow-sm custom-hover-card d-flex flex-row align-items-center gap-3"
+                  >
+                    <img
+                      src="../img/book/TheCountofMonteCristo.jpg"
+                      class="rounded-3 object-fit-cover"
+                      style="width: 90px; height: 90px"
+                      alt="Knowledge"
+                    />
+                    <div>
+                      <h6 class="text-light fw-bold mb-1">
+                        Knowledge & Inspiration
+                      </h6>
+                      <p class="text-white-50 small mb-0">
+                        LUMOS strives to become a trusted destination for
+                        readers seeking personal growth.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="card border-0 rounded-4 p-3 shadow-sm custom-hover-card d-flex flex-row align-items-center gap-3"
+                  >
+                    <img
+                      src="../img/book/EastodEden.jpg"
+                      class="rounded-3 object-fit-cover"
+                      style="width: 90px; height: 90px"
+                      alt="Tech"
+                    />
+                    <div>
+                      <h6 class="text-light fw-bold mb-1">
+                        Combining Technology
+                      </h6>
+                      <p class="text-white-50 small mb-0">
+                        By combining technology with a love for books, we bring
+                        libraries to your screen.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. JOIN THE JOURNEY -->
+            <div id="journey" class="mb-5">
+              <h2 class="fw-bold text-light mb-4" id="JointheJourney">
+                Join the Journey
+              </h2>
+              <div
+                class="row g-4 align-items-center rounded-4 p-3 p-md-4 shadow-lg mx-0"
+                style="
+                  background-color: rgba(8, 83, 122, 0.5);
+                  border: 1px solid rgba(255, 255, 255, 0.05);
+                "
+              >
+                <div class="col-xl-5">
+                  <div class="d-flex align-items-center mb-3">
+                    <img
+                      src="../img/logo-favicon.png"
+                      class="rounded-circle bg-white p-1"
+                      style="width: 50px; height: 50px"
+                      alt="User"
+                    />
+                    <div class="ms-3">
+                      <h6 class="text-light fw-bold mb-0">LUMOS Community</h6>
+                      <small class="text-white-50">Global Readers</small>
+                    </div>
+                  </div>
+                  <div class="mb-3" style="color: #ff7b00">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </div>
+                  <h5 class="text-white fw-bold mb-3">
+                    A Step Toward Personal Growth
+                  </h5>
+                  <p class="text-white-50 small mb-4">
+                    At LUMOS, every page turned is a step toward personal
+                    growth. We invite students, professionals, and book lovers
+                    everywhere to explore our library and become part of a
+                    growing community dedicated to learning and
+                    self-improvement.
+                  </p>
+                  <a
+                    href="../html/login.html"
+                    class="btn rounded-pill px-4 text-white fw-bold"
+                    style="
+                      background-color: transparent;
+                      border: 1px solid #ff7b00;
+                      color: #ff7b00;
+                    "
+                  >
+                    Get Started <i class="bi bi-arrow-right ms-2"></i>
+                  </a>
+                </div>
+                <div class="col-xl-7 mt-4 mt-xl-0">
+                  <div
+                    class="position-relative overflow-hidden rounded-4 shadow-lg custom-hover-card"
+                  >
+                    <img
+                      src="../img/slogan.png"
+                      class="w-100 object-fit-cover"
+                      style="height: 300px"
+                      alt="Journey"
+                    />
+
+                    <div
+                      class="position-absolute bottom-0 start-0 w-100 p-3"
+                      style="
+                        background: linear-gradient(
+                          to top,
+                          rgba(0, 0, 0, 0.8),
+                          transparent
+                        );
+                      "
+                    >
+                      <h6 class="text-white mb-0 ms-2">
+                        <i class="bi bi-camera-video me-2 text-warning"></i>
+                        Discover the LUMOS Experience
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
         </div>
-      </aside>
-      <main class="website-information">
-        <!-- about LUMOS -->
-        <div class="part-of-the-about-us">
-          <div id="aboutLUMOS" class="title-LUMOS-and-content-About-LUMOS">
-            <div class="main-title-LUMOS">About LUMOS</div>
-            <div class="content-About-LUMOS">
-              <p>
-                LUMOS - Night Library is an online book platform dedicated to
-                inspiring minds through the power of reading. Guided by our
-                message “Light Up Your Mind,” we aim to create a space where
-                knowledge is accessible, engaging, and transformative for
+      </div>
+
+      <footer class="bg-dark text-light py-2 mt-5">
+        <div class="container text-center text-md-start">
+          <div class="row text-center text-md-start">
+            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-2">
+              <h5
+                class="text-uppercase mb-2 font-weight-bold"
+                style="color: #ff7b00"
+              >
+                LUMOS
+              </h5>
+              <p class="mb-0 small">
+                Night Library - Light Up Your Mind. We aim to create a space
+                where knowledge is accessible, engaging, and transformative for
                 readers everywhere.
               </p>
-              <p>
-                In today's fast-paced digital world, discovering quality books
-                should be simple and enjoyable. LUMOS offers a carefully curated
-                collection of titles across diverse genres including literature,
-                business, technology, personal development, education, and more.
-                Our goal is to help readers of all ages explore ideas, gain new
-                perspectives, and continue growing every day.
+            </div>
+
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-2">
+              <h5
+                class="text-uppercase mb-2 font-weight-bold"
+                style="color: #ff7b00"
+              >
+                Quick Links
+              </h5>
+              <p class="mb-1 small">
+                <a
+                  href="../html/index.html"
+                  class="text-light text-decoration-none"
+                  >Home</a
+                >
+              </p>
+              <p class="mb-1 small">
+                <a
+                  href="../html/about_us.html"
+                  class="text-light text-decoration-none"
+                  >About Us</a
+                >
+              </p>
+              <p class="mb-1 small">
+                <a
+                  href="../html/books.html"
+                  class="text-light text-decoration-none"
+                  >Books</a
+                >
+              </p>
+              <p class="mb-0 small">
+                <a
+                  href="../html/category.html"
+                  class="text-light text-decoration-none"
+                  >Categories</a
+                >
+              </p>
+            </div>
+
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-2">
+              <h5
+                class="text-uppercase mb-2 font-weight-bold"
+                style="color: #ff7b00"
+              >
+                Contact
+              </h5>
+              <p class="mb-1 small">
+                <i class="bi bi-house-door-fill me-2"></i> Ho Chi Minh City,
+                Vietnam
+              </p>
+              <p class="mb-1 small">
+                <i class="bi bi-envelope-fill me-2"></i> info@lumoslibrary.com
+              </p>
+              <p class="mb-0 small">
+                <i class="bi bi-telephone-fill me-2"></i> +84 123 456 789
               </p>
             </div>
           </div>
-          <section class="hero-section">
-            <h1 class="main-title">LUMOS</h1>
-            <h2 class="sub-title">Light Up Your Mind</h2>
-          </section>
+
+          <hr class="my-2" />
+
+          <div class="row align-items-center">
+            <div class="col-md-7 col-lg-8">
+              <p class="mb-0 small">
+                Copyright ©2026 All rights reserved by:
+                <a href="#" style="text-decoration: none; color: #ff7b00"
+                  ><strong>LUMOS</strong></a
+                >
+              </p>
+            </div>
+            <div class="col-md-5 col-lg-4">
+              <div class="text-center text-md-end">
+                <ul class="list-unstyled list-inline m-0">
+                  <li class="list-inline-item">
+                    <a
+                      href="#"
+                      class="btn-floating btn-sm text-light"
+                      style="font-size: 18px"
+                      ><i class="bi bi-facebook"></i
+                    ></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a
+                      href="#"
+                      class="btn-floating btn-sm text-light"
+                      style="font-size: 18px"
+                      ><i class="bi bi-twitter-x"></i
+                    ></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a
+                      href="#"
+                      class="btn-floating btn-sm text-light"
+                      style="font-size: 18px"
+                      ><i class="bi bi-instagram"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-        <!-- offer -->
-        <div class="part-of-the-about-us">
-          <div id="offer">b</div>
-        </div>
-        <!-- vision -->
-        <div class="part-of-the-about-us">
-          <div id="vision">c</div>
-        </div>
-        <!-- journey -->
-        <div class="part-of-the-about-us">
-          <div id="journey">d</div>
-        </div>
-      </main>
+      </footer>
     </div>
-  </div>
-</body>
+  </body>
 </html>
