@@ -1303,3 +1303,13 @@ section.signup-container {
     font-size: 18px;
   }
 }
+
+/* Dropdown Menu */
+.dropdown-item.custom-hover {
+  transition: 0.3s;
+}
+.dropdown-item.custom-hover:hover {
+  background-color: #ff7b00 !important;
+  color: white !important;
+  padding-left: 20px;
+}
