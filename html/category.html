@@ -17,7 +17,6 @@
     <div class="wrapper">
       <nav class="navigation sticky-top">
         <ul class="list-unstyled m-0 p-0 d-flex align-items-center w-100">
-          
           <a href="index.html" class="me-3"><img src="../img/logo.png" alt="logo" class="logo-img" /></a>
           <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
             <a href="index.html">Home</a>
@@ -49,81 +48,125 @@
           <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
             <a href="signup.html">Sign up</a>
           </li>
-          
         </ul>
       </nav>
 
       <div class="container-fluid py-4 px-md-5" style="max-width: 1400px;">
         <div class="row gy-4">
           
-          <!-- SIDEBAR -->
-          <aside class="col-12 col-md-4 col-lg-3">
-            <div class="sidebar-box">
-              <h3>Catalog Book</h3>
-              <ul class="category-list m-0 p-0">
-                <li><a href="#">Novel - Literature</a></li>
-                <li><a href="#">Science Fiction</a></li>
-                <li><a href="#">Programming - Technology</a></li>
-                <li><a href="#">Life skills</a></li>
-                <li><a href="#">Foreign literature books</a></li>
-              </ul>
-            </div>
-
-            <div class="sidebar-box">
-              <h3>Filter by price</h3>
-              <ul class="category-list m-0 p-0">
-                <li><a href="#">All prices</a></li>
-                <li><a href="#">Under 100.000đ</a></li>
-                <li><a href="#">100.000đ - 300.000đ</a></li>
-                <li><a href="#">Over 300.000đ</a></li>
-              </ul>
-            </div>
-          </aside>
-
-          <!-- MAIN CONTENT -->
-          <main class="col-12 col-md-8 col-lg-9">
-            <div class="toolbar mb-4">
-              <h2 class="m-0">CATEGORIES</h2>
+          <main class="col-12">
+            
+            <div class="toolbar mb-4 d-flex justify-content-between align-items-center">
+              <h2 class="m-0" id="category-title" style="text-transform: uppercase;">CATEGORIES</h2>
+              <button id="btn-back-categories" class="btn btn-outline-light" style="display: none;">
+                <i class="bi bi-arrow-left me-2"></i>Back to Categories
+              </button>
             </div>
             
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+            <div id="category-grid" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4">
               
               <div class="col">
-                <a href="#" class="category-card h-100">
+                <a href="#" class="category-card h-100 category-link" data-name="Novel - Literature">
                   <i class="bi bi-book"></i>
                   <h3>Novel - Literature</h3>
                 </a>
               </div>
 
               <div class="col">
-                <a href="#" class="category-card h-100">
+                <a href="#" class="category-card h-100 category-link" data-name="Science Fiction">
                   <i class="bi bi-rocket-takeoff"></i>
                   <h3>Science Fiction</h3>
                 </a>
               </div>
 
               <div class="col">
-                <a href="#" class="category-card h-100">
+                <a href="#" class="category-card h-100 category-link" data-name="Programming - Technology">
                   <i class="bi bi-laptop"></i>
                   <h3>Programming - Technology</h3>
                 </a>
               </div>
 
               <div class="col">
-                <a href="#" class="category-card h-100">
+                <a href="#" class="category-card h-100 category-link" data-name="Life skills">
                   <i class="bi bi-person-workspace"></i>
                   <h3>Life skills</h3>
                 </a>
               </div>
 
               <div class="col">
-                <a href="#" class="category-card h-100">
+                <a href="#" class="category-card h-100 category-link" data-name="Foreign literature books">
                   <i class="bi bi-globe"></i>
                   <h3>Foreign literature books</h3>
                 </a>
               </div>
 
             </div>
+
+            <!-- LƯỚI SÁCH(display: none) -->
+            <div id="category-books-grid" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4" style="display: none;">
+              
+              <!-- Sách 1 -->
+              <div class="col">
+                <div class="product-card h-100 d-flex flex-column" data-price="150000"> 
+                  <div class="product-img-box">
+                    <img src="../img/book/EastodEden.jpg" alt="Book 1" />
+                  </div>
+                  <div class="product-info d-flex flex-column flex-grow-1">
+                    <h4 class="book-title">East of Eden</h4>
+                    <p class="book-author">John Steinbeck</p>
+                    <div class="rating">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                    </div>
+                    <div class="price-action d-flex justify-content-between align-items-center mt-auto">
+                      <span class="price">150.000đ</span>
+                      <button class="btn-add"><i class="bi bi-cart-plus"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sách mẫu 2 -->
+              <div class="col">
+                <div class="product-card h-100 d-flex flex-column" data-price="220000">
+                  <div class="product-img-box">
+                    <img src="../img/book/TheCountofMonteCristo.jpg" alt="Book 2" />
+                  </div>
+                  <div class="product-info d-flex flex-column flex-grow-1">
+                    <h4 class="book-title">The Count of MonteCristo</h4>
+                    <p class="book-author">Alexandre Dumas</p>
+                    <div class="rating">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                    <div class="price-action d-flex justify-content-between align-items-center mt-auto">
+                      <span class="price">220.000đ</span>
+                      <button class="btn-add"><i class="bi bi-cart-plus"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sách mẫu 3 -->
+              <div class="col">
+                <div class="product-card h-100 d-flex flex-column" data-price="170000">
+                  <div class="product-img-box">
+                    <img src="../img/book/TheCallofTheWild.jpg" alt="Book 3" />
+                  </div>
+                  <div class="product-info d-flex flex-column flex-grow-1">
+                    <h4 class="book-title">The call of the Wild</h4>
+                    <p class="book-author">Jack London</p>
+                    <div class="rating">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                    </div>
+                    <div class="price-action d-flex justify-content-between align-items-center mt-auto">
+                      <span class="price">170.000đ</span>
+                      <button class="btn-add"><i class="bi bi-cart-plus"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            
           </main>
             
         </div>

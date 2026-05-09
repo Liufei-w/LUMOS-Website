@@ -1,4 +1,55 @@
 $(document).ready(function () {
+
+// KIỂM TRA ĐĂNG KÝ
+  $("#formDangKy").on("submit", function (e) {
+    e.preventDefault();
+
+    let ten = $("#ten").val();
+    let ngaySinh = $("#ngaySinh").val();
+    let email = $("#email").val();
+    let matKhau = $("#matKhau").val();
+    let dieuKhoan = $("#dieuKhoan").is(":checked");
+
+    if (ten === "") {
+      alert("Vui lòng nhập họ tên!");
+      return;
+    }
+
+    if (ngaySinh === "") {
+      alert("Vui lòng chọn ngày sinh!");
+      return;
+    }
+
+    const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailReg.test(email)) {
+      alert("Email không hợp lệ!");
+      return;
+    }
+
+    if (matKhau.length < 6) {
+      alert("Mật khẩu phải có ít nhất 6 ký tự!");
+      return;
+    }
+
+    if (!dieuKhoan) {
+      alert("Bạn phải đồng ý với điều khoản sử dụng!");
+      return;
+    }
+
+    let thongBaoThanhCong = `
+      ĐĂNG KÝ THÀNH CÔNG!
+      --------------------
+      Họ tên: ${ten}
+      Ngày sinh: ${ngaySinh}
+      Email: ${email}
+      Mật khẩu: ${"*".repeat(matKhau.length)} (Đã mã hóa)
+    `;
+
+    alert(thongBaoThanhCong);
+  });
+
+
+
     // ==========================================
     // SORT SÁCH TĂNG GIẢM
     // ==========================================
@@ -55,6 +106,39 @@ $(document).ready(function () {
         } else {
           $(this).hide();
         }
+      });
+    });
+  }
+
+
+// ==========================================
+  // XỬ LÝ TRANG CATEGORIES (Click danh mục hiện sách)
+  // ==========================================
+  let $categoryLinks = $(".category-link");
+  let $categoryGrid = $("#category-grid");
+  let $categoryBooksGrid = $("#category-books-grid");
+  let $categoryTitle = $("#category-title");
+  let $btnBackCategories = $("#btn-back-categories");
+
+  if ($categoryGrid.length > 0) {
+  
+    $categoryLinks.on("click", function (e) {
+      e.preventDefault();
+      
+      let catName = $(this).data("name");
+
+      $categoryGrid.fadeOut(200, function () {
+        $categoryTitle.text(catName);
+        $btnBackCategories.fadeIn(200);
+        $categoryBooksGrid.fadeIn(300);
+      });
+    });
+
+    $btnBackCategories.on("click", function () {
+      $categoryBooksGrid.fadeOut(200, function () {
+        $btnBackCategories.hide();
+        $categoryTitle.text("CATEGORIES");
+        $categoryGrid.fadeIn(300);
       });
     });
   }
