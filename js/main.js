@@ -144,6 +144,37 @@ $(document).ready(function () {
   }
 
 
+  // ==========================================
+  // XỬ LÝ TRANG AUTHORS (Click tác giả hiện sách)
+  // ==========================================
+  const $authorLinks = $(".author-link");
+  const $authorGrid = $("#author-grid");
+  const $authorBooksGrid = $("#author-books-grid");
+  const $authorTitle = $("#author-title");
+  const $btnBackAuthors = $("#btn-back-authors");
+
+  if ($authorGrid.length > 0) {
+    $authorLinks.on("click", function (e) {
+      e.preventDefault();
+      
+      const authorName = $(this).data("name");
+      $authorGrid.fadeOut(200, function () {
+        $authorTitle.text(authorName);
+        $btnBackAuthors.fadeIn(200);
+        $authorBooksGrid.fadeIn(300);
+      });
+    });
+
+    $btnBackAuthors.on("click", function () {
+      
+      $authorBooksGrid.fadeOut(200, function () {
+        $btnBackAuthors.hide();
+        $authorTitle.text("AUTHORS");
+        $authorGrid.fadeIn(300);
+      });
+    });
+  }
+
 // ==========================================
 // CART: TĂNG/GIẢM SỐ LƯỢNG + TÍNH TỔNG TIỀN
 // ==========================================
