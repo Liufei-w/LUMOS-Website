@@ -6,57 +6,117 @@
     <title>LUMOS - Cart</title>
 
     <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/bootstrap-icons-1.13.1/bootstrap-icons.min.css" />
+    <link
+      rel="stylesheet"
+      href="../css/bootstrap-icons-1.13.1/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="../css/books.css" />
 
     <script src="../js/jquery-4.0.0.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/main.js"></script>
     <link rel="icon" type="image/x-icon" href="../img/logo-favicon.png" />
-
   </head>
 
   <body>
     <div class="wrapper">
       <nav class="navigation sticky-top">
         <ul class="list-unstyled m-0 p-0 d-flex align-items-center w-100">
-          <a href="index.html" class="me-3"><img src="../img/logo.png" alt="logo" class="logo-img" /></a>
+          <a href="index.html" class="me-3"
+            ><img src="../img/logo.png" alt="logo" class="logo-img"
+          /></a>
 
-          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
+          <li
+            class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill"
+          >
             <a href="index.html">Home</a>
           </li>
-          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill dropdown">
-            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="cursor: pointer;">
+          <li
+            class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill dropdown"
+          >
+            <a
+              href="#"
+              class="dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              style="cursor: pointer"
+            >
               About Us
             </a>
-            <ul class="dropdown-menu mt-3" style="background-color: rgba(9, 38, 53, 0.95); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); overflow: hidden;">
-              <li><a class="dropdown-item text-white py-2 custom-hover" href="about_us.html">About LUMOS</a></li>
-              <li><a class="dropdown-item text-white py-2 custom-hover" href="../html/about_us/member.html">Member</a></li>
-              <li><a class="dropdown-item text-white py-2 custom-hover" href="../html/about_us/sitemap.html">Sitemap</a></li>
+            <ul
+              class="dropdown-menu mt-3"
+              style="
+                background-color: rgba(9, 38, 53, 0.95);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 14px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+                overflow: hidden;
+              "
+            >
+              <li>
+                <a
+                  class="dropdown-item text-white py-2 custom-hover"
+                  href="about_us.html"
+                  >About LUMOS</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item text-white py-2 custom-hover"
+                  href="../html/about_us/member.html"
+                  >Member</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item text-white py-2 custom-hover"
+                  href="../html/about_us/sitemap.html"
+                  >Sitemap</a
+                >
+              </li>
             </ul>
           </li>
-          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
+          <li
+            class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill"
+          >
             <a href="books.html">Books</a>
           </li>
-          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
+          <li
+            class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill"
+          >
             <a href="category.html">Categories</a>
           </li>
-          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
+          <li
+            class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill"
+          >
             <a href="authors.html">Authors</a>
           </li>
 
           <li class="nav-search d-flex align-items-center rounded-pill">
-            <input type="text" placeholder="Search for books and authors..." class="flex-grow-1" />
+            <input
+              type="text"
+              placeholder="Search for books and authors..."
+              class="flex-grow-1"
+            />
             <button type="submit"><i class="bi bi-search"></i></button>
           </li>
 
-          <li class="nav-btn ms-auto mx-2 d-flex justify-content-center align-items-center rounded-pill">
-            <a href="cart.html" style="color: #ff7b00">Cart <i class="bi bi-cart2"></i></a>
+          <li
+            class="nav-btn ms-auto mx-2 d-flex justify-content-center align-items-center rounded-pill"
+          >
+            <a href="cart.html" style="color: #ff7b00"
+              >Cart <i class="bi bi-cart2"></i
+            ></a>
           </li>
-          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
+          <li
+            class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill"
+          >
             <a href="login.html">Login</a>
           </li>
-          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
+          <li
+            class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill"
+          >
             <a href="signup.html">Sign up</a>
           </li>
         </ul>
@@ -69,10 +129,16 @@
             <li class="breadcrumb-item active" aria-current="page">Cart</li>
           </ol>
         <div class="cart-title-box">
-          <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+          <div
+            class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3"
+          >
             <div>
-              <h1 class="m-0"><i class="bi bi-cart-check me-2"></i>Your Cart</h1>
-              <p class="m-0 text-light">Review your selected books before checkout.</p>
+              <h1 class="m-0">
+                <i class="bi bi-cart-check me-2"></i>Your Cart
+              </h1>
+              <p class="m-0 text-light">
+                Review your selected books before checkout.
+              </p>
             </div>
             <a href="books.html" class="btn-continue">
               <i class="bi bi-arrow-left"></i> Continue shopping
@@ -87,15 +153,23 @@
 
           <aside class="col-12 col-lg-4">
             <div class="coupon-box mb-4">
-              <h3 class="summary-title"><i class="bi bi-ticket-perforated me-2"></i>Coupon</h3>
+              <h3 class="summary-title">
+                <i class="bi bi-ticket-perforated me-2"></i>Coupon
+              </h3>
               <div class="d-flex gap-2">
-                <input type="text" class="coupon-input flex-grow-1" placeholder="Enter code" />
+                <input
+                  type="text"
+                  class="coupon-input flex-grow-1"
+                  placeholder="Enter code"
+                />
                 <button type="button" class="btn-apply">Apply</button>
               </div>
             </div>
 
             <div class="order-summary sticky-lg-top" style="top: 110px">
-              <h3 class="summary-title"><i class="bi bi-receipt me-2"></i>Order Summary</h3>
+              <h3 class="summary-title">
+                <i class="bi bi-receipt me-2"></i>Order Summary
+              </h3>
 
               <div class="summary-row">
                 <span>Subtotal</span>
@@ -114,12 +188,21 @@
                 <span id="grandTotal">0đ</span>
               </div>
 
-              <button type="button" class="btn-checkout mt-3" data-bs-toggle="modal" data-bs-target="#checkoutModal">
+              <button
+                type="button"
+                class="btn-checkout mt-3"
+                data-bs-toggle="modal"
+                data-bs-target="#checkoutModal"
+              >
                 Proceed to Checkout
               </button>
 
-              <p class="text-center mt-3 mb-0 text-light" style="font-size: 13px">
-                <i class="bi bi-truck me-1"></i> Free shipping for orders over 300.000đ
+              <p
+                class="text-center mt-3 mb-0 text-light"
+                style="font-size: 13px"
+              >
+                <i class="bi bi-truck me-1"></i> Free shipping for orders over
+                300.000đ
               </p>
             </div>
           </aside>
@@ -127,179 +210,242 @@
       </main>
     </div>
 
-    <div class="modal fade" id="checkoutModal" tabindex="-1" aria-hidden="true" data-bs-theme="dark">
-  <div class="modal-dialog modal-dialog-centered modal-xl">
-    <div class="modal-content checkout-modal-content text-white">
-      <div class="modal-header checkout-modal-header border-bottom-0">
-        <div>
-          <h5 class="modal-title checkout-modal-title">
-            <i class="bi bi-credit-card-2-front me-2"></i>Checkout
-          </h5>
-          <p class="m-0 text-light" style="font-size: 14px;">
-            Complete your information to place the order.
-          </p>
-        </div>
-
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-
-      <div class="modal-body checkout-modal-body">
-        <div class="row gy-4">
-          <section class="col-12 col-lg-7">
-            <form id="checkoutForm">
-              <h3 class="checkout-section-title">
-                <i class="bi bi-person-lines-fill me-2"></i>Customer Information
-              </h3>
-
-              <div class="row g-3">
-                <div class="col-12 col-md-6">
-                  <label class="checkout-label">Full Name</label>
-                  <input type="text" id="customerName" class="checkout-input" placeholder="Nguyen Van A" />
-                  <small class="checkout-error" id="nameError"></small>
-                </div>
-
-                <div class="col-12 col-md-6">
-                  <label class="checkout-label">Phone Number</label>
-                  <input type="text" id="customerPhone" class="checkout-input" placeholder="0901234567" />
-                  <small class="checkout-error" id="phoneError"></small>
-                </div>
-
-                <div class="col-12">
-                  <label class="checkout-label">Email</label>
-                  <input type="email" id="customerEmail" class="checkout-input" placeholder="example@gmail.com" />
-                  <small class="checkout-error" id="emailError"></small>
-                </div>
-
-                <div class="col-12">
-                  <label class="checkout-label">Delivery Address</label>
-                  <textarea
-                    id="customerAddress"
-                    class="checkout-input checkout-textarea"
-                    placeholder="House number, street, ward, district, city"
-                  ></textarea>
-                  <small class="checkout-error" id="addressError"></small>
-                </div>
-              </div>
-
-              <h3 class="checkout-section-title mt-4">
-                <i class="bi bi-truck me-2"></i>Delivery Method
-              </h3>
-
-              <div class="checkout-option active">
-                <div>
-                  <strong>Standard Delivery</strong>
-                  <p class="m-0 text-light">Receive books within 2 - 5 days.</p>
-                </div>
-                <span id="modalShippingFee">30.000đ</span>
-              </div>
-
-              <h3 class="checkout-section-title mt-4">
-                <i class="bi bi-wallet2 me-2"></i>Payment Method
-              </h3>
-
-              <div class="payment-list">
-                <label class="payment-option">
-                  <input type="radio" name="paymentMethod" value="COD" checked />
-                  <span>
-                    <i class="bi bi-cash-stack me-2"></i>Cash on Delivery
-                  </span>
-                </label>
-
-                <label class="payment-option">
-                  <input type="radio" name="paymentMethod" value="Bank" />
-                  <span>
-                    <i class="bi bi-bank me-2"></i>Bank Transfer
-                  </span>
-                </label>
-
-                <label class="payment-option">
-                  <input type="radio" name="paymentMethod" value="E-wallet" />
-                  <span>
-                    <i class="bi bi-phone me-2"></i>E-wallet
-                  </span>
-                </label>
-              </div>
-
-              <h3 class="checkout-section-title mt-4">
-                <i class="bi bi-chat-left-text me-2"></i>Order Note
-              </h3>
-
-              <textarea class="checkout-input checkout-textarea" placeholder="Note for seller or shipper..."></textarea>
-            </form>
-          </section>
-
-          <aside class="col-12 col-lg-5">
-            <div class="checkout-modal-summary">
-              <h3 class="summary-title">
-                <i class="bi bi-bag-check me-2"></i>Your Order
-              </h3>
-
-              <div id="modalOrderItems">
-                <!-- JS sẽ tự hiển thị sách trong giỏ hàng ở đây -->
-              </div>
-
-              <div class="summary-row mt-3">
-                <span>Subtotal</span>
-                <strong id="modalSubtotal">0đ</strong>
-              </div>
-
-              <div class="summary-row">
-                <span>Shipping</span>
-                <strong id="modalShipping">30.000đ</strong>
-              </div>
-
-              <div class="summary-row">
-                <span>Discount</span>
-                <strong id="modalDiscount">0đ</strong>
-              </div>
-
-              <div class="summary-row border-0 summary-total">
-                <span>Total</span>
-                <span id="modalGrandTotal">0đ</span>
-              </div>
-
-              <button type="button" id="placeOrderBtn" class="btn-checkout mt-3">
-                Place Order
-              </button>
-
-              <p class="text-center mt-3 mb-0 text-light" style="font-size: 13px;">
-                <i class="bi bi-shield-check me-1"></i>
-                Your information is safe with LUMOS.
+    <div
+      class="modal fade"
+      id="checkoutModal"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-theme="dark"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content checkout-modal-content text-white">
+          <div class="modal-header checkout-modal-header border-bottom-0">
+            <div>
+              <h5 class="modal-title checkout-modal-title">
+                <i class="bi bi-credit-card-2-front me-2"></i>Checkout
+              </h5>
+              <p class="m-0 text-light" style="font-size: 14px">
+                Complete your information to place the order.
               </p>
             </div>
-          </aside>
+
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body checkout-modal-body">
+            <div class="row gy-4">
+              <section class="col-12 col-lg-7">
+                <form id="checkoutForm">
+                  <h3 class="checkout-section-title">
+                    <i class="bi bi-person-lines-fill me-2"></i>Customer
+                    Information
+                  </h3>
+
+                  <div class="row g-3">
+                    <div class="col-12 col-md-6">
+                      <label class="checkout-label">Full Name</label>
+                      <input
+                        type="text"
+                        id="customerName"
+                        class="checkout-input"
+                        placeholder="Nguyen Van A"
+                      />
+                      <small class="checkout-error" id="nameError"></small>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                      <label class="checkout-label">Phone Number</label>
+                      <input
+                        type="text"
+                        id="customerPhone"
+                        class="checkout-input"
+                        placeholder="0901234567"
+                      />
+                      <small class="checkout-error" id="phoneError"></small>
+                    </div>
+
+                    <div class="col-12">
+                      <label class="checkout-label">Email</label>
+                      <input
+                        type="email"
+                        id="customerEmail"
+                        class="checkout-input"
+                        placeholder="example@gmail.com"
+                      />
+                      <small class="checkout-error" id="emailError"></small>
+                    </div>
+
+                    <div class="col-12">
+                      <label class="checkout-label">Delivery Address</label>
+                      <textarea
+                        id="customerAddress"
+                        class="checkout-input checkout-textarea"
+                        placeholder="House number, street, ward, district, city"
+                      ></textarea>
+                      <small class="checkout-error" id="addressError"></small>
+                    </div>
+                  </div>
+
+                  <h3 class="checkout-section-title mt-4">
+                    <i class="bi bi-truck me-2"></i>Delivery Method
+                  </h3>
+
+                  <div class="checkout-option active">
+                    <div>
+                      <strong>Standard Delivery</strong>
+                      <p class="m-0 text-light">
+                        Receive books within 2 - 5 days.
+                      </p>
+                    </div>
+                    <span id="modalShippingFee">30.000đ</span>
+                  </div>
+
+                  <h3 class="checkout-section-title mt-4">
+                    <i class="bi bi-wallet2 me-2"></i>Payment Method
+                  </h3>
+
+                  <div class="payment-list">
+                    <label class="payment-option">
+                      <input
+                        type="radio"
+                        name="paymentMethod"
+                        value="COD"
+                        checked
+                      />
+                      <span>
+                        <i class="bi bi-cash-stack me-2"></i>Cash on Delivery
+                      </span>
+                    </label>
+
+                    <label class="payment-option">
+                      <input type="radio" name="paymentMethod" value="Bank" />
+                      <span>
+                        <i class="bi bi-bank me-2"></i>Bank Transfer
+                      </span>
+                    </label>
+
+                    <label class="payment-option">
+                      <input
+                        type="radio"
+                        name="paymentMethod"
+                        value="E-wallet"
+                      />
+                      <span> <i class="bi bi-phone me-2"></i>E-wallet </span>
+                    </label>
+                  </div>
+
+                  <h3 class="checkout-section-title mt-4">
+                    <i class="bi bi-chat-left-text me-2"></i>Order Note
+                  </h3>
+
+                  <textarea
+                    class="checkout-input checkout-textarea"
+                    placeholder="Note for seller or shipper..."
+                  ></textarea>
+                </form>
+              </section>
+
+              <aside class="col-12 col-lg-5">
+                <div class="checkout-modal-summary">
+                  <h3 class="summary-title">
+                    <i class="bi bi-bag-check me-2"></i>Your Order
+                  </h3>
+
+                  <div id="modalOrderItems">
+                    <!-- JS sẽ tự hiển thị sách trong giỏ hàng ở đây -->
+                  </div>
+
+                  <div class="summary-row mt-3">
+                    <span>Subtotal</span>
+                    <strong id="modalSubtotal">0đ</strong>
+                  </div>
+
+                  <div class="summary-row">
+                    <span>Shipping</span>
+                    <strong id="modalShipping">30.000đ</strong>
+                  </div>
+
+                  <div class="summary-row">
+                    <span>Discount</span>
+                    <strong id="modalDiscount">0đ</strong>
+                  </div>
+
+                  <div class="summary-row border-0 summary-total">
+                    <span>Total</span>
+                    <span id="modalGrandTotal">0đ</span>
+                  </div>
+
+                  <button
+                    type="button"
+                    id="placeOrderBtn"
+                    class="btn-checkout mt-3"
+                  >
+                    Place Order
+                  </button>
+
+                  <p
+                    class="text-center mt-3 mb-0 text-light"
+                    style="font-size: 13px"
+                  >
+                    <i class="bi bi-shield-check me-1"></i>
+                    Your information is safe with LUMOS.
+                  </p>
+                </div>
+              </aside>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
-<div class="modal fade" id="orderSuccessModal" tabindex="-1" aria-hidden="true" data-bs-theme="dark">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content checkout-modal-content text-white">
-      <div class="modal-header border-bottom-0">
-        <h5 class="modal-title" style="color: #ff7b00">
-          <i class="bi bi-check-circle-fill me-2"></i>Order Successful
-        </h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
+    <div
+      class="modal fade"
+      id="orderSuccessModal"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-theme="dark"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content checkout-modal-content text-white">
+          <div class="modal-header border-bottom-0">
+            <h5 class="modal-title" style="color: #ff7b00">
+              <i class="bi bi-check-circle-fill me-2"></i>Order Successful
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
 
-      <div class="modal-body text-center py-4">
-        <i class="bi bi-bag-check" style="font-size: 3rem; color: #ff7b00"></i>
-        <h4 class="mt-3">Thank you for your order!</h4>
-        <p class="text-light mb-0">
-          LUMOS will contact you soon to confirm the delivery information.
-        </p>
-      </div>
+          <div class="modal-body text-center py-4">
+            <i
+              class="bi bi-bag-check"
+              style="font-size: 3rem; color: #ff7b00"
+            ></i>
+            <h4 class="mt-3">Thank you for your order!</h4>
+            <p class="text-light mb-0">
+              LUMOS will contact you soon to confirm the delivery information.
+            </p>
+          </div>
 
-      <div class="modal-footer border-top-0 justify-content-center pb-4">
-        <button type="button" class="btn btn-outline-light rounded-pill px-4" data-bs-dismiss="modal">
-          Close
-        </button>
+          <div class="modal-footer border-top-0 justify-content-center pb-4">
+            <button
+              type="button"
+              class="btn btn-outline-light rounded-pill px-4"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-
   </body>
 </html>
