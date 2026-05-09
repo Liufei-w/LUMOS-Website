@@ -180,186 +180,249 @@ $(document).ready(function () {
 // ==========================================
 const cartItems = $(".cart-item");
 
-// Chỉ bắt đầu khi ở trang giỏ hàng
-if (cartItems.length > 0) {
+    const formatMoney = n => n.toLocaleString("vi-VN") + "đ";
+    const getCart = () => JSON.parse(localStorage.getItem("cart")) || [];
+    const saveCart = cart => localStorage.setItem("cart", JSON.stringify(cart));
 
-  function formatMoney(number) {
-    return number.toLocaleString("vi-VN") + "đ";
-  }
+    function updateCartCount() {
+      const total = getCart().reduce((sum, item) => sum + item.quantity, 0);
+      const cartLink = $('a[href="cart.html"]');
 
-  function updateCartTotal() {
-  let subtotal = 0;
-
-  // Lấy lại danh sách sách hiện tại sau mỗi lần xóa
-  const currentCartItems = $(".cart-item");
-
-  currentCartItems.each(function () {
-    const price = parseInt($(this).data("price"));
-    const qty = parseInt($(this).find(".qty-input").val());
-    const itemTotal = price * qty;
-
-    $(this).find(".item-total").text(formatMoney(itemTotal));
-    subtotal += itemTotal;
-  });
-
-  const shipping = subtotal >= 300000 || subtotal === 0 ? 0 : 30000;
-  const discount = 0;
-  const grandTotal = subtotal + shipping - discount;
-
-  $("#subtotal").text(formatMoney(subtotal));
-  $("#shipping").text(shipping === 0 ? "Free" : formatMoney(shipping));
-  $("#discount").text(formatMoney(discount));
-  $("#grandTotal").text(formatMoney(grandTotal));
-
-  // Nếu giỏ hàng rỗng
-  if (currentCartItems.length === 0) {
-    $(".cart-list").html(`
-      <div class="cart-card text-center">
-        <i class="bi bi-cart-x" style="font-size: 50px; color: #ff7b00;"></i>
-        <h3 class="mt-3">Your cart is empty</h3>
-        <p class="text-light">You have not selected any books yet.</p>
-        <a href="books.html" class="btn-continue mt-2">
-          <i class="bi bi-arrow-left"></i> Continue shopping
-        </a>
-      </div>
-    `);
-  }
-}
-
-  $(".btn-plus").on("click", function () {
-    const qtyInput = $(this).siblings(".qty-input");
-    const currentQty = parseInt(qtyInput.val());
-
-    qtyInput.val(currentQty + 1);
-    updateCartTotal();
-  });
-
-  $(".btn-minus").on("click", function () {
-    const qtyInput = $(this).siblings(".qty-input");
-    const currentQty = parseInt(qtyInput.val());
-
-    if (currentQty > 1) {
-      qtyInput.val(currentQty - 1);
-      updateCartTotal();
-    }
-  });
-
-  $(".remove-btn").on("click", function () {
-    $(this).closest(".cart-item").remove();
-    updateCartTotal();
-  });
-
-  updateCartTotal();
-}
-
-  // ==========================================
-  // CHECKOUT MODAL: HIỂN THỊ SÁCH + KIỂM TRA FORM
-  // ==========================================
-  const checkoutModal = $("#checkoutModal");
-
-  // Chỉ bắt đầu khi có modal thanh toán
-  if (checkoutModal.length > 0) {
-
-    function clearCheckoutErrors() {
-      $("#nameError").text("");
-      $("#phoneError").text("");
-      $("#emailError").text("");
-      $("#addressError").text("");
+      if (cartLink.length) {
+        cartLink.html(`Cart <i class="bi bi-cart2"></i> (${total})`);
+      }
     }
 
-    function validCheckoutForm() {
-      clearCheckoutErrors();
+    // ==========================================
+    // BOOKS: THÊM SÁCH VÀO GIỎ HÀNG
+    // ==========================================
+    $(".btn-add").on("click", function () {
+      const card = $(this).closest(".product-card");
+      const col = $(this).closest(".col");
 
-      let ok = true;
+      const book = {
+        title: card.find(".book-title").text().trim(),
+        author: card.find(".book-author").text().trim(),
+        price: parseInt(col.data("price")),
+        image: card.find(".product-img-box img").attr("src"),
+        quantity: 1
+      };
 
-      const name = $("#customerName").val().trim();
-      const phone = $("#customerPhone").val().trim();
-      const email = $("#customerEmail").val().trim();
-      const address = $("#customerAddress").val().trim();
+      let cart = getCart();
+      const oldBook = cart.find(item => item.title === book.title);
 
-      if (name.length < 2) {
-        $("#nameError").text("Please enter your full name.");
-        ok = false;
+      if (oldBook) {
+        oldBook.quantity++;
+      } else {
+        cart.push(book);
       }
 
-      if (!/^[0-9]{10}$/.test(phone)) {
-        $("#phoneError").text("Phone number must have 10 digits.");
-        ok = false;
-      }
+      saveCart(cart);
+      updateCartCount();
+      alert("Đã thêm sách vào giỏ hàng!");
+    });
 
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        $("#emailError").text("Please enter a valid email.");
-        ok = false;
-      }
+    // ==========================================
+    // CART PAGE
+    // ==========================================
+    const cartList = $(".cart-list");
 
-      if (address.length < 10) {
-        $("#addressError").text("Please enter a detailed delivery address.");
-        ok = false;
-      }
+    function updateTotal() {
+      const subtotal = getCart().reduce((sum, item) => {
+        return sum + item.price * item.quantity;
+      }, 0);
 
-      return ok;
+      const shipping = subtotal === 0 || subtotal >= 300000 ? 0 : 30000;
+      const grandTotal = subtotal + shipping;
+
+      $("#subtotal").text(formatMoney(subtotal));
+      $("#shipping").text(shipping === 0 ? "Free" : formatMoney(shipping));
+      $("#discount").text(formatMoney(0));
+      $("#grandTotal").text(formatMoney(grandTotal));
     }
 
-    function updateCheckoutModal() {
-      let subtotal = 0;
-      let orderHTML = "";
-      const currentCartItems = $(".cart-item");
+    function renderCart() {
+      if (!cartList.length) return;
 
-      currentCartItems.each(function () {
-        const title = $(this).find(".cart-book-title").text();
-        const author = $(this).find(".cart-book-author").text();
-        const img = $(this).find(".cart-img-box img").attr("src");
-        const price = parseInt($(this).data("price"));
-        const qty = parseInt($(this).find(".qty-input").val());
-        const itemTotal = price * qty;
+      const cart = getCart();
 
-        subtotal += itemTotal;
+      if (cart.length === 0) {
+        cartList.html(`
+          <div class="cart-card text-center">
+            <i class="bi bi-cart-x" style="font-size: 50px; color: #ff7b00;"></i>
+            <h3 class="mt-3">Your cart is empty</h3>
+            <p class="text-light">You have not selected any books yet.</p>
+            <a href="books.html" class="btn-continue mt-2">
+              <i class="bi bi-arrow-left"></i> Continue shopping
+            </a>
+          </div>
+        `);
 
-        orderHTML += `
-          <div class="checkout-book">
-            <img src="${img}" alt="${title}" />
-            <div>
-              <h4>${title}</h4>
-              <p>${author}</p>
-              <p>${qty} x ${formatMoney(price)}</p>
+        updateTotal();
+        updateCartCount();
+        return;
+      }
+
+      let html = "";
+
+      cart.forEach((item, index) => {
+        html += `
+          <div class="cart-item" data-index="${index}">
+            <div class="cart-product">
+              <div class="cart-img-box">
+                <img src="${item.image}" alt="${item.title}">
+              </div>
+
+              <div class="cart-book-info">
+                <h4 class="cart-book-title">${item.title}</h4>
+                <p class="cart-book-author">${item.author}</p>
+                <p class="cart-book-price">${formatMoney(item.price)}</p>
+              </div>
+            </div>
+
+            <div class="cart-actions">
+              <div class="quantity-box">
+                <button class="btn-minus">-</button>
+                <input type="text" class="qty-input" value="${item.quantity}" readonly>
+                <button class="btn-plus">+</button>
+              </div>
+
+              <div class="item-total">
+                ${formatMoney(item.price * item.quantity)}
+              </div>
+
+              <button class="remove-btn">
+                <i class="bi bi-trash"></i>
+              </button>
             </div>
           </div>
         `;
       });
 
-      const shipping = subtotal >= 300000 || subtotal === 0 ? 0 : 30000;
-      const discount = 0;
-      const grandTotal = subtotal + shipping - discount;
-
-      $("#modalOrderItems").html(orderHTML);
-      $("#modalSubtotal").text(formatMoney(subtotal));
-      $("#modalShipping").text(shipping === 0 ? "Free" : formatMoney(shipping));
-      $("#modalShippingFee").text(shipping === 0 ? "Free" : formatMoney(shipping));
-      $("#modalDiscount").text(formatMoney(discount));
-      $("#modalGrandTotal").text(formatMoney(grandTotal));
+      cartList.html(html);
+      updateTotal();
+      updateCartCount();
     }
 
-    $("#checkoutModal").on("show.bs.modal", function (e) {
-      const currentCartItems = $(".cart-item");
+    cartList.on("click", ".btn-plus, .btn-minus, .remove-btn", function () {
+      const index = $(this).closest(".cart-item").data("index");
+      let cart = getCart();
 
-      if (currentCartItems.length === 0) {
-        e.preventDefault();
-        alert("Your cart is empty!");
-        return;
+      if ($(this).hasClass("btn-plus")) {
+        cart[index].quantity++;
       }
 
-      updateCheckoutModal();
-    });
-
-    $("#placeOrderBtn").on("click", function () {
-      if (validCheckoutForm()) {
-        const checkoutModalObj = bootstrap.Modal.getInstance(document.getElementById("checkoutModal"));
-        checkoutModalObj.hide();
-
-        const orderSuccessModal = new bootstrap.Modal(document.getElementById("orderSuccessModal"));
-        orderSuccessModal.show();
+      if ($(this).hasClass("btn-minus") && cart[index].quantity > 1) {
+        cart[index].quantity--;
       }
+
+      if ($(this).hasClass("remove-btn")) {
+        cart.splice(index, 1);
+      }
+
+      saveCart(cart);
+      renderCart();
     });
-  }
+
+    renderCart();
+
+    // ==========================================
+    // CHECKOUT MODAL
+    // ==========================================
+    const checkoutModal = $("#checkoutModal");
+
+    if (checkoutModal.length > 0) {
+      function clearCheckoutErrors() {
+        $("#nameError, #phoneError, #emailError, #addressError").text("");
+      }
+
+      function validCheckoutForm() {
+        clearCheckoutErrors();
+
+        let ok = true;
+        const name = $("#customerName").val().trim();
+        const phone = $("#customerPhone").val().trim();
+        const email = $("#customerEmail").val().trim();
+        const address = $("#customerAddress").val().trim();
+
+        if (name.length < 2) {
+          $("#nameError").text("Please enter your full name.");
+          ok = false;
+        }
+
+        if (!/^[0-9]{10}$/.test(phone)) {
+          $("#phoneError").text("Phone number must have 10 digits.");
+          ok = false;
+        }
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          $("#emailError").text("Please enter a valid email.");
+          ok = false;
+        }
+
+        if (address.length < 10) {
+          $("#addressError").text("Please enter a detailed delivery address.");
+          ok = false;
+        }
+
+        return ok;
+      }
+
+      function updateCheckoutModal() {
+        const cart = getCart();
+        let subtotal = 0;
+        let html = "";
+
+        cart.forEach(item => {
+          subtotal += item.price * item.quantity;
+
+          html += `
+            <div class="checkout-book">
+              <img src="${item.image}" alt="${item.title}" />
+              <div>
+                <h4>${item.title}</h4>
+                <p>${item.author}</p>
+                <p>${item.quantity} x ${formatMoney(item.price)}</p>
+              </div>
+            </div>
+          `;
+        });
+
+        const shipping = subtotal === 0 || subtotal >= 300000 ? 0 : 30000;
+        const grandTotal = subtotal + shipping;
+
+        $("#modalOrderItems").html(html);
+        $("#modalSubtotal").text(formatMoney(subtotal));
+        $("#modalShipping").text(shipping === 0 ? "Free" : formatMoney(shipping));
+        $("#modalShippingFee").text(shipping === 0 ? "Free" : formatMoney(shipping));
+        $("#modalDiscount").text(formatMoney(0));
+        $("#modalGrandTotal").text(formatMoney(grandTotal));
+      }
+
+      checkoutModal.on("show.bs.modal", function (e) {
+        if (getCart().length === 0) {
+          e.preventDefault();
+          alert("Your cart is empty!");
+          return;
+        }
+
+        updateCheckoutModal();
+      });
+
+      $("#placeOrderBtn").on("click", function () {
+        if (!validCheckoutForm()) return;
+
+        localStorage.removeItem("cart");
+
+        bootstrap.Modal.getInstance(document.getElementById("checkoutModal")).hide();
+
+        new bootstrap.Modal(document.getElementById("orderSuccessModal")).show();
+
+        renderCart();
+        updateCartCount();
+      });
+    }
+
+    updateCartCount();
 
 });
