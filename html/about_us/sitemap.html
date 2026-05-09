@@ -1,55 +1,689 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="about-page">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LUMOS - Light Up Your Mind</title>
-    <link rel="stylesheet" href="../../css/about_us.css" />
-    <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/bootstrap-icons-1.13.1/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../css/books.css" />
+    <title>LUMOS - Sitemap</title>
 
-    <script src="../js/jquery-4.0.0.js"></script>
-    <script src="../js/bootstrap.bundle.min.js"></script>
-    <script src="../js/main.js"></script>
-    <link rel="icon" type="image/x-icon" href="../img/logo-favicon.png" />
+    <link href="../../css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="../../css/bootstrap-icons-1.13.1/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="../../css/books.css" />
+
+    <script src="../../js/jquery-4.0.0.js"></script>
+    <script src="../../js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/main.js"></script>
+    <link rel="icon" type="image/x-icon" href="../../img/logo-favicon.png" />
+
+    <style>
+      /* =========================================
+         CSS SITEMAP RESPONSIVE 100%
+      ========================================= */
+      .sitemap-wrapper {
+        width: 100%;
+        padding: 20px 15px;
+        overflow-x: hidden;
+      }
+
+      /* Cấu hình chung cho Thẻ nút bấm */
+      .tree-node {
+        border: 2px solid #ff7b00;
+        transition: all 0.3s ease;
+        background-color: #212529;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        position: relative;
+      }
+      .tree-node:hover {
+        background-color: #ff7b00;
+        color: #fff;
+        box-shadow: 0 6px 15px rgba(255, 123, 0, 0.4);
+        transform: translateY(-4px);
+        border-color: #ff7b00;
+      }
+      .node-home {
+        padding: 12px 40px;
+        font-size: 18px;
+      }
+      .node-main {
+        padding: 10px 15px;
+        width: 140px;
+        text-align: center;
+      }
+      .node-leaf {
+        padding: 8px 12px;
+        width: 170px;
+        font-size: 13px;
+        justify-content: flex-start;
+        border-color: #6c757d;
+      }
+      .node-leaf:hover {
+        border-color: #ff7b00;
+      }
+
+      /* =========================================
+         GIAO DIỆN MÁY TÍNH (SƠ ĐỒ CÂY NGANG)
+      ========================================= */
+      @media (min-width: 1200px) {
+        .tree-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          min-width: 1100px;
+          margin: 0 auto;
+        }
+        .level-1 {
+          position: relative;
+          margin-bottom: 40px;
+        }
+        .level-1::after {
+          content: "";
+          position: absolute;
+          bottom: -40px;
+          left: 50%;
+          width: 2px;
+          height: 40px;
+          background: #ff7b00;
+          transform: translateX(-50%);
+        }
+
+        .level-2-row {
+          display: flex;
+          width: 100%;
+          justify-content: center;
+          position: relative;
+        }
+        .branch {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          position: relative;
+          padding-top: 40px;
+        }
+
+        .branch::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 2px;
+          background: #ff7b00;
+        }
+        .branch:first-child::before {
+          left: 50%;
+          width: 50%;
+        }
+        .branch:last-child::before {
+          width: 50%;
+          right: 50%;
+          left: auto;
+        }
+        .branch::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 50%;
+          width: 2px;
+          height: 40px;
+          background: #ff7b00;
+          transform: translateX(-50%);
+        }
+
+        .node-pointer {
+          position: relative;
+        }
+        .node-pointer::before {
+          content: "";
+          position: absolute;
+          top: -5px;
+          left: 50%;
+          border: 5px solid transparent;
+          border-top-color: #ff7b00;
+          transform: translateX(-50%);
+          z-index: 1;
+        }
+
+        .sub-list {
+          width: 140px;
+          position: relative;
+          margin-top: 15px;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+        }
+        .sub-list::before {
+          content: "";
+          position: absolute;
+          top: -15px;
+          left: 50%;
+          width: 2px;
+          height: calc(100% - 20px);
+          background: #ff7b00;
+          transform: translateX(-50%);
+          z-index: 1;
+        }
+
+        .sub-item-inner {
+          margin-left: 50%;
+          padding-left: 20px;
+          position: relative;
+        }
+        .sub-item-inner::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 20px;
+          height: 2px;
+          background: #ff7b00;
+          transform: translateY(-50%);
+          z-index: 1;
+        }
+        .sub-item-inner::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 16px;
+          border: 4px solid transparent;
+          border-left-color: #ff7b00;
+          transform: translateY(-50%);
+          z-index: 2;
+        }
+      }
+
+      /* =========================================
+         GIAO DIỆN ĐIỆN THOẠI (SƠ ĐỒ GẬP DỌC)
+      ========================================= */
+      @media (max-width: 1199px) {
+        .tree-container {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          width: 100%;
+          max-width: 400px;
+          margin: 0 auto;
+        }
+        .level-1 {
+          margin-bottom: 0;
+          z-index: 5;
+          margin-left: 10px;
+        }
+
+        /* Trục xương sống chính */
+        .level-2-row {
+          display: flex;
+          flex-direction: column;
+          border-left: 2px solid #ff7b00;
+          margin-left: 50px;
+          padding-bottom: 20px;
+          padding-top: 20px;
+        }
+
+        .branch {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          padding-left: 30px;
+          margin-bottom: 15px;
+          position: relative;
+        }
+
+        /* Gạch nối ngang từ xương sống vào Mục lớn */
+        .branch::before {
+          content: "";
+          position: absolute;
+          top: 20px;
+          left: 0;
+          width: 30px;
+          height: 2px;
+          background: #ff7b00;
+        }
+        .node-pointer {
+          position: relative;
+        }
+        .node-pointer::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: -6px;
+          border: 5px solid transparent;
+          border-left-color: #ff7b00;
+          transform: translateY(-50%);
+          z-index: 2;
+        }
+
+        /* Trục xương sống của nhánh con */
+        .sub-list {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          margin-top: 10px;
+          margin-left: 20px;
+          border-left: 2px solid #ff7b00;
+          padding-top: 10px;
+          padding-bottom: 5px;
+        }
+
+        .sub-item-inner {
+          padding-left: 25px;
+          position: relative;
+        }
+        /* Gạch nối ngang từ xương sống vào Mục con */
+        .sub-item-inner::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 25px;
+          height: 2px;
+          background: #ff7b00;
+          transform: translateY(-50%);
+        }
+        .sub-item-inner::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 21px;
+          border: 4px solid transparent;
+          border-left-color: #ff7b00;
+          transform: translateY(-50%);
+          z-index: 2;
+        }
+      }
+    </style>
   </head>
+
+  <body class="bg-dark text-light">
+    <div class="wrapper">
+      <!-- NAVIGATION (Menu web giữ nguyên) -->
+      <nav class="navigation sticky-top">
+        <ul class="list-unstyled m-0 p-0 d-flex align-items-center w-100">
+          <a href="../index.html" class="me-3"
+            ><img src="../../img/logo.png" alt="logo" class="logo-img"
+          /></a>
+          <li
+            class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill"
+          >
+            <a href="../index.html">Home</a>
+          </li>
+
+          <li
+            class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill dropdown"
+          >
+            <a
+              href="#"
+              class="dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              style="color: #ff7b00; cursor: pointer"
+            >
+              About Us
+            </a>
+            <ul
+              class="dropdown-menu mt-3"
+              style="
+                background-color: rgba(9, 38, 53, 0.95);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 14px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+                overflow: hidden;
+              "
+            >
+              <li>
+                <a
+                  class="dropdown-item text-white py-2 custom-hover"
+                  href="../about_us.html"
+                  >About LUMOS</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item text-white py-2 custom-hover"
+                  href="../about_us/member.html"
+                  >Member</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item text-white py-2 custom-hover"
+                  href="../about_us/sitemap.html"
+                  >Sitemap</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li
+            class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill"
+          >
+            <a href="../books.html">Books</a>
+          </li>
+          <li
+            class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill"
+          >
+            <a href="../category.html">Categories</a>
+          </li>
+          <li
+            class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill"
+          >
+            <a href="../authors.html">Authors</a>
+          </li>
+
+          <li class="nav-search d-flex align-items-center rounded-pill">
+            <input
+              type="text"
+              placeholder="Search for books and authors..."
+              class="flex-grow-1"
+            />
+            <button type="submit"><i class="bi bi-search"></i></button>
+          </li>
+          <li
+            class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill"
+          >
+            <a href="../login.html">Login</a>
+          </li>
+          <li
+            class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill"
+          >
+            <a href="../signup.html">Sign up</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- ================= MAIN CONTENT (SITEMAP MỚI) ================= -->
+      <main class="container py-5" style="min-height: 65vh">
+        <div class="text-center mb-5">
+          <h2 class="display-5 fw-bold text-uppercase" style="color: #ff7b00">
+            Sơ Đồ Hệ Thống
+          </h2>
+          <p class="text-secondary fs-5">Điều hướng tổng quan trang LUMOS</p>
+        </div>
+
+        <div class="sitemap-wrapper pb-5">
+          <!-- Cấu trúc HTML đã dọn sạch các class Bootstrap gây xung đột Layout -->
+          <div class="tree-container">
+            <!-- LEVEL 1 (HOME) -->
+            <div class="level-1">
+              <a
+                href="../index.html"
+                class="tree-node node-home"
+                style="background-color: #ff7b00"
+                >Home</a
+              >
+            </div>
+
+            <!-- LEVEL 2 & 3 -->
+            <div class="level-2-row">
+              <!-- Cột 1: About Us -->
+              <div class="branch">
+                <div class="node-pointer">
+                  <a
+                    href="../about_us.html"
+                    class="tree-node node-main shadow"
+                    style="background-color: rgba(8, 83, 122, 0.4)"
+                    >About Us</a
+                  >
+                </div>
+                <div class="sub-list">
+                  <div class="sub-item-inner">
+                    <a href="member.html" class="tree-node node-leaf shadow-sm"
+                      >Member</a
+                    >
+                  </div>
+                  <div class="sub-item-inner">
+                    <a href="sitemap.html" class="tree-node node-leaf shadow-sm"
+                      >Sitemap</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Cột 2: Authors -->
+              <div class="branch">
+                <div class="node-pointer">
+                  <a
+                    href="../authors.html"
+                    class="tree-node node-main shadow"
+                    style="background-color: rgba(8, 83, 122, 0.4)"
+                    >Authors</a
+                  >
+                </div>
+                <div class="sub-list">
+                  <div class="sub-item-inner">
+                    <a
+                      href="../authors.html"
+                      class="tree-node node-leaf shadow-sm"
+                      >1...</a
+                    >
+                  </div>
+                  <div class="sub-item-inner">
+                    <a
+                      href="../authors.html"
+                      class="tree-node node-leaf shadow-sm"
+                      >2...</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Cột 3: Books -->
+              <div class="branch">
+                <div class="node-pointer">
+                  <a
+                    href="../books.html"
+                    class="tree-node node-main shadow"
+                    style="background-color: rgba(8, 83, 122, 0.4)"
+                    >Books</a
+                  >
+                </div>
+              </div>
+
+              <!-- Cột 4: Cart -->
+              <div class="branch">
+                <div class="node-pointer">
+                  <a
+                    href="../cart.html"
+                    class="tree-node node-main shadow"
+                    style="background-color: rgba(8, 83, 122, 0.4)"
+                    >Cart</a
+                  >
+                </div>
+              </div>
+
+              <!-- Cột 5: Category -->
+              <div class="branch">
+                <div class="node-pointer">
+                  <a
+                    href="../category.html"
+                    class="tree-node node-main shadow"
+                    style="background-color: rgba(8, 83, 122, 0.4)"
+                    >Category</a
+                  >
+                </div>
+                <div class="sub-list">
+                  <div class="sub-item-inner">
+                    <a
+                      href="../category.html"
+                      class="tree-node node-leaf shadow-sm"
+                      >Novel - Literature</a
+                    >
+                  </div>
+                  <div class="sub-item-inner">
+                    <a
+                      href="../category.html"
+                      class="tree-node node-leaf shadow-sm"
+                      >Science Fiction</a
+                    >
+                  </div>
+                  <div class="sub-item-inner">
+                    <a
+                      href="../category.html"
+                      class="tree-node node-leaf shadow-sm"
+                      >Programming</a
+                    >
+                  </div>
+                  <div class="sub-item-inner">
+                    <a
+                      href="../category.html"
+                      class="tree-node node-leaf shadow-sm"
+                      >Life skills</a
+                    >
+                  </div>
+                  <div class="sub-item-inner">
+                    <a
+                      href="../category.html"
+                      class="tree-node node-leaf shadow-sm"
+                      >Foreign books</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Cột 6: Login -->
+              <div class="branch">
+                <div class="node-pointer">
+                  <a
+                    href="../login.html"
+                    class="tree-node node-main shadow"
+                    style="background-color: rgba(8, 83, 122, 0.4)"
+                    >Login</a
+                  >
+                </div>
+              </div>
+
+              <!-- Cột 7: Sign Up -->
+              <div class="branch">
+                <div class="node-pointer">
+                  <a
+                    href="../signup.html"
+                    class="tree-node node-main shadow"
+                    style="background-color: rgba(8, 83, 122, 0.4)"
+                    >Sign Up</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- FOOTER -->
+      <footer class="bg-dark text-light py-4 mt-5 border-top border-secondary">
+        <div class="container text-center text-md-start">
+          <div class="row text-center text-md-start">
+            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-2">
+              <h5
+                class="text-uppercase mb-2 font-weight-bold"
+                style="color: #ff7b00"
+              >
+                LUMOS
+              </h5>
+              <p class="mb-0 small">
+                Night Library - Light Up Your Mind. We aim to create a space
+                where knowledge is accessible, engaging, and transformative for
+                readers everywhere.
+              </p>
+            </div>
+
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-2">
+              <h5
+                class="text-uppercase mb-2 font-weight-bold"
+                style="color: #ff7b00"
+              >
+                Quick Links
+              </h5>
+              <p class="mb-1 small">
+                <a href="../index.html" class="text-light text-decoration-none"
+                  >Home</a
+                >
+              </p>
+              <p class="mb-1 small">
+                <a
+                  href="../about_us.html"
+                  class="text-light text-decoration-none"
+                  >About Us</a
+                >
+              </p>
+              <p class="mb-1 small">
+                <a href="../books.html" class="text-light text-decoration-none"
+                  >Books</a
+                >
+              </p>
+              <p class="mb-0 small">
+                <a
+                  href="../category.html"
+                  class="text-light text-decoration-none"
+                  >Categories</a
+                >
+              </p>
+            </div>
+
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-2">
+              <h5
+                class="text-uppercase mb-2 font-weight-bold"
+                style="color: #ff7b00"
+              >
+                Contact
+              </h5>
+              <p class="mb-1 small">
+                <i class="bi bi-house-door-fill me-2"></i> Ho Chi Minh City,
+                Vietnam
+              </p>
+              <p class="mb-1 small">
+                <i class="bi bi-envelope-fill me-2"></i> info@lumoslibrary.com
+              </p>
+              <p class="mb-0 small">
+                <i class="bi bi-telephone-fill me-2"></i> +84 123 456 789
+              </p>
+            </div>
+          </div>
+
+          <hr class="my-3 border-secondary" />
+
+          <div class="row align-items-center">
+            <div class="col-md-7 col-lg-8">
+              <p class="mb-0 small">
+                Copyright ©2026 All rights reserved by:
+                <a href="#" style="text-decoration: none; color: #ff7b00"
+                  ><strong>LUMOS</strong></a
+                >
+              </p>
+            </div>
+            <div class="col-md-5 col-lg-4">
+              <div class="text-center text-md-end">
+                <ul class="list-unstyled list-inline m-0">
+                  <li class="list-inline-item">
+                    <a href="#" class="btn-floating btn-sm text-light fs-5"
+                      ><i class="bi bi-facebook"></i
+                    ></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#" class="btn-floating btn-sm text-light fs-5"
+                      ><i class="bi bi-twitter-x"></i
+                    ></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#" class="btn-floating btn-sm text-light fs-5"
+                      ><i class="bi bi-instagram"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>
-<body>
-  <div class="wrapper">
-    <nav class="navigation">
-      <ul>
-        <img src="../../img/logo.png" alt="logo" class="logo-img" />
-        <li><a href="../home.html">Home</a></li>
-        <li><a href="../about_us.html" style="color: #ff7b00">About Us</a></li>
-        <li><a href="../books.html">Books</a></li>
-        <li><a href="../category.html">Categories</a></li>
-        <li><a href="../authors.html">Authors</a></li>
-
-        <li class="nav-search">
-          <input type="text" placeholder="Search for books and authors..." />
-          <button type="submit"><i class="bi bi-search"></i></button>
-        </li>
-
-        <li class="push-right">
-          <a href="#">Cart <i class="bi bi-cart2"></i></a>
-        </li>
-        <li><a href="../login.html">Login</a></li>
-        <li><a href="../signup.html">Sign up</a></li>
-      </ul>
-    </nav>
-    <nav class="Toolbar">
-      <ul>
-        <li>
-          <a href="../about_us.html">About us</a>
-        </li>
-        <li>
-          <a href="member.html">Member</a>
-        </li>
-        <li>
-          <a href="sitemap.html" style="color: #ff7b00">Sitemap</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</body>

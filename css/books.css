@@ -1363,16 +1363,16 @@ section.signup-container {
     min-width: auto;
     text-align: left;
   }
-/* Dropdown Menu */
-.dropdown-item.custom-hover {
-  transition: 0.3s;
+  /* Dropdown Menu */
+  .dropdown-item.custom-hover {
+    transition: 0.3s;
+  }
+  .dropdown-item.custom-hover:hover {
+    background-color: #ff7b00;
+    color: white;
+    padding-left: 20px;
+  }
 }
-.dropdown-item.custom-hover:hover {
-  background-color: #ff7b00;
-  color: white;
-  padding-left: 20px;
-}}
-
 
 /* =========================================
    11. BREADCRUMB (Thanh điều hướng phụ)
@@ -1420,4 +1420,18 @@ section.signup-container {
 }
 .play-btn-hover:hover i {
   color: white !important;
+}
+
+/*member-card*/
+.member-card {
+  background-color: rgba(25, 25, 25, 0.8);
+  border: 1px solid rgba(255, 123, 0, 0.2);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5) !important;
+  border-color: #ff7b00 !important;
 }
