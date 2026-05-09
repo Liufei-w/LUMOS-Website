@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUMOS - Cửa Hàng Sách</title>
+
+  <link href="../../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/bootstrap-icons-1.13.1/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../../css/books.css" />
+
+  <script src="../../js/jquery-4.0.0.js"></script>
+  <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script src="../../js/main.js"></script>
+  <link rel="icon" type="image/x-icon" href="../../img/logo-favicon.png" />
+  <style>
+    .product {
+      background-color: rgba(8, 83, 122, 0.2);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 15px;
+      transition: 0.3s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav class="navigation sticky-top">
+      <ul class="list-unstyled m-0 p-0 d-flex align-items-center w-100">
+
+        <a href="index.html" class="me-3"><img src="../../img/logo.png" alt="logo" class="logo-img" /></a>
+        <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
+          <a href="index.html">Home</a>
+        </li>
+        <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill dropdown">
+          <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="cursor: pointer;">
+            About Us
+          </a>
+          <ul class="dropdown-menu mt-3"
+            style="background-color: rgba(9, 38, 53, 0.95); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); overflow: hidden;">
+            <li><a class="dropdown-item text-white py-2 custom-hover" href="../about_us.html">About LUMOS</a></li>
+            <li><a class="dropdown-item text-white py-2 custom-hover" href="../../html/about_us/member.html">Member</a>
+            </li>
+            <li><a class="dropdown-item text-white py-2 custom-hover"
+                href="../../html/about_us/sitemap.html">Sitemap</a></li>
+          </ul>
+        </li>
+        <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
+          <a href="../books.html" style="color: #ff7b00">Books</a>
+        </li>
+        <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
+          <a href="../category.html">Categories</a>
+        </li>
+        <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
+          <a href="../authors.html">Authors</a>
+        </li>
+
+        <li class="nav-search d-flex align-items-center rounded-pill">
+          <input type="text" placeholder="Search for books and authors..." class="flex-grow-1" />
+          <button type="submit"><i class="bi bi-search"></i></button>
+        </li>
+
+        <li class="nav-btn ms-auto mx-2 d-flex justify-content-center align-items-center rounded-pill">
+          <a href="../cart.html">Cart <i class="bi bi-cart2"></i></a>
+        </li>
+        <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
+          <a href="../login.html">Login</a>
+        </li>
+        <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
+          <a href="../signup.html">Sign up</a>
+        </li>
+
+      </ul>
+    </nav>
+
+    <div class="container-fluid py-4 px-md-5" style="max-width: 1400px;">
+      <div class="row gy-4">
+
+        <!-- SIDEBAR -->
+        <aside class="col-12 col-md-4 col-lg-3">
+          <div class="sidebar-box">
+            <h3>Catalog Book</h3>
+            <ul class="category-list m-0 p-0">
+              <li><a href="#">Novel - Literature</a></li>
+              <li><a href="#">Science Fiction</a></li>
+              <li><a href="#">Programming - Technology</a></li>
+              <li><a href="#">Life skills</a></li>
+              <li><a href="#">Foreign literature books</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-box">
+            <h3>Filter by price</h3>
+            <ul class="category-list m-0 p-0" id="price-filter">
+              <li><a href="#" data-min="0" data-max="999999999" style="color: #ff7b00;">All prices</a></li>
+              <li><a href="#" data-min="0" data-max="99999">Under 100.000đ</a></li>
+              <li><a href="#" data-min="100000" data-max="200000">100.000đ - 200.000đ</a></li>
+              <li><a href="#" data-min="200001" data-max="999999999">Over 200.000đ</a></li>
+            </ul>
+          </div>
+        </aside>
+        <main class="col-12 col-md-8 col-lg-9">
+          <div class="product" style="width: 100%; height: auto">
+            <div class="product-img-box" style="width:35%;height: 100% ;float:left; margin: 10px;">
+              <img src="../../img/book/TheRiseAndFallofTheDinosaurs.jpg" alt="Book 1" />
+            </div>
+            <div class="product-info">
+              <h4 class="book-title" style="font-size: 30px;">The Rise and Fall of the Dinosaurs: A New
+                History of Their Lost World</h4>
+              <p class="book-author">Steve Brusatte</p>
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <div class="about_books">
+                <p><b>"THE ULTIMATE DINOSAUR BIOGRAPHY," hails Scientific American: A thrilling new history
+                    of the age of dinosaurs, from one of our finest young scientists.</b></p><br>
+                <p>"This is scientific storytelling at its most visceral, striding with the beasts through
+                  their Triassic dawn, Jurassic dominance, and abrupt demise in the Cretaceous." ―Nature
+                </p><br>
+                <p>The dinosaurs. Sixty-six million years ago, the Earth’s most fearsome creatures vanished.
+                  Today they remain one of our planet’s great mysteries. Now The Rise and Fall of the
+                  Dinosaurs reveals their extraordinary, 200-million-year-long story as never before.</p>
+                <br>
+                <p>In this captivating narrative of natural history (enlivened with more than seventy
+                  original illustrations and photographs), Steve Brusatte, a young American paleontologist
+                  who has emerged as one of the foremost stars of the field―naming fifteen new species and
+                  leading groundbreaking scientific studies and fieldwork―masterfully tells the complete,
+                  surprising, and new history of the dinosaurs, drawing on cutting-edge science to
+                  dramatically bring to life their lost world and illuminate their enigmatic origins,
+                  spectacular flourishing, astonishing diversity, cataclysmic extinction, and startling
+                  living legacy. Captivating and revelatory, The Rise and Fall of the Dinosaurs is a book
+                  for the ages.</p><br>
+                <p>Brusatte traces the evolution of dinosaurs from their inauspicious start as small shadow
+                  dwellers―themselves the beneficiaries of a mass extinction caused by volcanic eruptions
+                  at the beginning of the Triassic period―into the dominant array of species every
+                  wide-eyed child memorizes today, T. rex, Triceratops, Brontosaurus, and more. This
+                  gifted scientist and writer re-creates the dinosaurs’ peak during the Jurassic and
+                  Cretaceous, when thousands of species thrived, and winged and feathered dinosaurs, the
+                  prehistoric ancestors of modern birds, emerged. The story continues to the end of the
+                  Cretaceous period, when a giant asteroid or comet struck the planet and nearly every
+                  dinosaur species (but not all) died out, in the most extraordinary extinction event in
+                  earth’s history, one full of lessons for today as we confront a “sixth extinction.”</p>
+              </div>
+              <div class="price-action" style="margin: 10px;">
+                <div style="display: flex; gap: 5px">
+                  <h3>PRICE:</h3>
+                  <span class="price">200.000đ</span>
+                </div>
+                <div style="display: flex; gap: 5px">
+                  <h3>ADD TO CART: </h3>
+                  <button class="btn-add">
+                    <i class="bi bi-cart-plus"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
