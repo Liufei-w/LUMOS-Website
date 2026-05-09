@@ -1366,12 +1366,41 @@ section.signup-container {
     min-width: auto;
     text-align: left;
   }
+  
 /* Dropdown Menu */
 .dropdown-item.custom-hover {
   transition: 0.3s;
 }
 .dropdown-item.custom-hover:hover {
-  background-color: #ff7b00 !important;
-  color: white !important;
+  background-color: #ff7b00;
+  color: white;
   padding-left: 20px;
+}}
+
+
+/* =========================================
+   11. BREADCRUMB (Thanh điều hướng phụ)
+========================================= */
+.custom-breadcrumb .breadcrumb-item a {
+  color: #cccccc;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.custom-breadcrumb .breadcrumb-item a:hover {
+  color: #ff7b00;
+}
+
+/* Màu của dấu mũi tên phân cách (>) */
+.custom-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+  color: #888888;
+  font-size: 14px;
+}
+
+/* Màu của trang hiện tại */
+.custom-breadcrumb .breadcrumb-item.active {
+  color: #ff7b00;
+  font-weight: bold;
+  font-size: 14px;
 }
