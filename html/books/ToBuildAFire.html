@@ -3,13 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LUMOS - Cửa Hàng Sách</title>
+    <title>LUMOS - To Build A Fire</title>
 
     <link href="../../css/bootstrap/bootstrap.min.css" rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="../../css/bootstrap-icons-1.13.1/bootstrap-icons.min.css"
-    />
+    <link rel="stylesheet" href="../../css/bootstrap-icons-1.13.1/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="../../css/books.css" />
 
     <script src="../../js/jquery-4.0.0.js"></script>
@@ -18,12 +15,17 @@
     <link rel="icon" type="image/x-icon" href="../../img/logo-favicon.png" />
     <style>
       .product {
-        background-color: rgba(8, 83, 122, 0.2);
-        backdrop-filter: blur(8px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 12px;
-        padding: 15px;
+        background-color: rgba(8, 83, 122, 0.25);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 16px;
         transition: 0.3s;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      }
+      
+      .btn-add-detail:hover {
+        background-color: #e66a00;
+        transform: translateY(-2px);
       }
     </style>
   </head>
@@ -32,192 +34,111 @@
     <div class="wrapper">
       <nav class="navigation sticky-top">
         <ul class="list-unstyled m-0 p-0 d-flex align-items-center w-100">
-          <a href="../index.html" class="me-3"
-            ><img src="../../img/logo.png" alt="logo" class="logo-img"
-          /></a>
-          <li
-            class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill"
-          >
+          <a href="../index.html" class="me-3"><img src="../../img/logo.png" alt="logo" class="logo-img"/></a>
+          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
             <a href="../index.html">Home</a>
           </li>
 
-          <li
-            class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill dropdown"
-          >
-            <a
-              href="#"
-              class="dropdown-toggle"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-              style="color: #ff7b00; cursor: pointer"
-            >
+          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill dropdown">
+            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="color: #ff7b00; cursor: pointer">
               About Us
             </a>
-            <ul
-              class="dropdown-menu mt-3"
-              style="
-                background-color: rgba(9, 38, 53, 0.95);
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(255, 255, 255, 0.2);
-                border-radius: 14px;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-                overflow: hidden;
-              "
-            >
-              <li>
-                <a
-                  class="dropdown-item text-white py-2 custom-hover"
-                  href="../about_us.html"
-                  >About LUMOS</a
-                >
-              </li>
-              <li>
-                <a
-                  class="dropdown-item text-white py-2 custom-hover"
-                  href="../about_us/member.html"
-                  >Member</a
-                >
-              </li>
-              <li>
-                <a
-                  class="dropdown-item text-white py-2 custom-hover"
-                  href="../about_us/sitemap.html"
-                  >Sitemap</a
-                >
-              </li>
+            <ul class="dropdown-menu mt-3" style="background-color: rgba(9, 38, 53, 0.95); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 14px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); overflow: hidden;">
+              <li><a class="dropdown-item text-white py-2 custom-hover" href="../about_us.html">About LUMOS</a></li>
+              <li><a class="dropdown-item text-white py-2 custom-hover" href="../about_us/member.html">Member</a></li>
+              <li><a class="dropdown-item text-white py-2 custom-hover" href="../about_us/sitemap.html">Sitemap</a></li>
             </ul>
           </li>
 
-          <li
-            class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill"
-          >
+          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
             <a href="../books.html">Books</a>
           </li>
-          <li
-            class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill"
-          >
+          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
             <a href="../category.html">Categories</a>
           </li>
-          <li
-            class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill"
-          >
+          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
             <a href="../authors.html">Authors</a>
           </li>
 
           <li class="nav-search d-flex align-items-center rounded-pill">
-            <input
-              type="text"
-              placeholder="Search for books and authors..."
-              class="flex-grow-1"
-            />
+            <input type="text" placeholder="Search for books and authors..." class="flex-grow-1" />
             <button type="submit"><i class="bi bi-search"></i></button>
           </li>
-          <li
-            class="nav-btn ms-auto mx-2 d-flex justify-content-center align-items-center rounded-pill"
-          >
+          <li class="nav-btn ms-auto mx-2 d-flex justify-content-center align-items-center rounded-pill">
             <a href="../cart.html">Cart <i class="bi bi-cart2"></i></a>
           </li>
-          <li
-            class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill"
-          >
+          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
             <a href="../login.html">Login</a>
           </li>
-          <li
-            class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill"
-          >
+          <li class="nav-btn mx-2 d-flex justify-content-center align-items-center rounded-pill">
             <a href="../signup.html">Sign up</a>
           </li>
         </ul>
       </nav>
 
       <div class="container-fluid py-4 px-md-5" style="max-width: 1400px">
+        
+        <nav aria-label="breadcrumb" class="mb-4" style="--bs-breadcrumb-divider: '>';">
+          <ol class="breadcrumb m-0 custom-breadcrumb">
+            <li class="breadcrumb-item"><a href="../index.html"><i class="bi bi-house-door-fill me-1"></i>Home</a></li>
+            <li class="breadcrumb-item"><a href="../books.html">Books</a></li>
+            <li class="breadcrumb-item active" aria-current="page">To Build A Fire</li>
+          </ol>
+        </nav>
+
         <div class="row gy-4">
-          <!-- SIDEBAR -->
-          <aside class="col-12 col-md-4 col-lg-3">
-            <div class="sidebar-box">
-              <h3>Catalog Book</h3>
-              <ul class="category-list m-0 p-0">
-                <li><a href="#">Novel - Literature</a></li>
-                <li><a href="#">Science Fiction</a></li>
-                <li><a href="#">Programming - Technology</a></li>
-                <li><a href="#">Life skills</a></li>
-                <li><a href="#">Foreign literature books</a></li>
-              </ul>
+          <main class="col-12">
+            
+            <div class="product p-4 p-lg-5 w-100">
+              
+              <div class="row g-5 align-items-start">
+                
+                <div class="col-12 col-md-5 col-lg-4 text-center">
+                  <div class="product-img-box rounded overflow-hidden" style="box-shadow: 0 15px 40px rgba(0,0,0,0.5);">
+                    <img src="../../img/book/ToBuildAFire.jpg" alt="To Build A Fire" class="img-fluid w-100 object-fit-cover" />
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-7 col-lg-8">
+                  <div class="product-info d-flex flex-column h-100 text-light">
+                    
+                    <h1 class="book-title fw-bold text-white mb-2" style="font-size: 42px">To Build A Fire</h1>
+                    <p class="book-author fs-5 mb-3" style="color: #ff7b00">Jack London</p>
+                    
+                    <div class="rating mb-4" style="font-size: 20px;">
+                      <i class="bi bi-star-fill text-warning"></i>
+                      <i class="bi bi-star-fill text-warning"></i>
+                      <i class="bi bi-star-fill text-warning"></i>
+                      <i class="bi bi-star-fill text-warning"></i>
+                      <i class="bi bi-star-fill text-warning"></i>
+                      <span class="ms-2 text-secondary fs-6">(384 Reviews)</span>
+                    </div>
+
+                    <div class="about_books" style="line-height: 1.8; font-size: 15px; color: #dddddd;">
+                      <p class="mb-4">
+                        To Build a Fire is the best known of all London's stories. It tells the story of a new arrival to the Klondike who stubbornly ignores warnings about the folly of traveling alone. He falls through the ice into a creek in 70-below weather, and his survival depends on being able to build a fire and dry his clothes—which he is unable to do. The famous version of this story was published in 1908.
+                      </p>
+                    </div>
+
+                    <div class="price-action mt-auto pt-4 border-top border-secondary d-flex flex-wrap align-items-center gap-4">
+                      
+                      <div class="d-flex flex-column">
+                        <span class="text-secondary fw-bold" style="font-size: 12px; letter-spacing: 1px;">PRICE</span>
+                        <span class="price fw-bold" style="font-size: 36px; color: #ff7b00; line-height: 1;">110.000đ</span>
+                      </div>
+
+                      <button class="btn btn-add-detail d-flex align-items-center gap-2 px-4 py-3 rounded-pill fw-bold text-white" style="background-color: #ff7b00; border: none; font-size: 18px; box-shadow: 0 8px 20px rgba(255, 123, 0, 0.4); transition: all 0.3s ease;">
+                        <i class="bi bi-cart-plus fs-4"></i> Add to Cart
+                      </button>
+
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
             </div>
 
-            <div class="sidebar-box">
-              <h3>Filter by price</h3>
-              <ul class="category-list m-0 p-0" id="price-filter">
-                <li>
-                  <a
-                    href="#"
-                    data-min="0"
-                    data-max="999999999"
-                    style="color: #ff7b00"
-                    >All prices</a
-                  >
-                </li>
-                <li>
-                  <a href="#" data-min="0" data-max="99999">Under 100.000đ</a>
-                </li>
-                <li>
-                  <a href="#" data-min="100000" data-max="200000"
-                    >100.000đ - 200.000đ</a
-                  >
-                </li>
-                <li>
-                  <a href="#" data-min="200001" data-max="999999999"
-                    >Over 200.000đ</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </aside>
-          <main class="col-12 col-md-8 col-lg-9">
-            <div class="product" style="width: 100%">
-              <div
-                class="product-img-box"
-                style="width: 35%; height: 100%; float: left; margin: 10px"
-              >
-                <img src="../../img/book/ToBuildAFire.jpg" alt="Book 1" />
-              </div>
-              <div class="product-info">
-                <h4 class="book-title" style="font-size: 30px">
-                  To Build A Fire
-                </h4>
-                <p class="book-author">Jack London</p>
-                <div class="rating">
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                </div>
-                <div class="about_books">
-                  <p>
-                    To Build a Fire is the best known of all London's stories.
-                    It tells the story of a new arrival to the Klondike who
-                    stubbornly ignores warnings about the folly of traveling
-                    alone. He falls through the ice into a creek in 70-below
-                    weather, and his survival depends on being able to build a
-                    fire and dry his clothes—which he is unable to do. The
-                    famous version of this story was published in 1908.
-                  </p>
-                </div>
-                <div class="price-action" style="margin: 10px">
-                  <div style="display: flex; gap: 5px">
-                    <h3>PRICE:</h3>
-                    <span class="price">110.000đ</span>
-                  </div>
-                  <div style="display: flex; gap: 5px">
-                    <h3>ADD TO CART:</h3>
-                    <button class="btn-add">
-                      <i class="bi bi-cart-plus"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
           </main>
         </div>
       </div>
