@@ -345,11 +345,13 @@
                     style="cursor: pointer"
                   >
                     <div class="product-img-box">
-                      <img src="../img/book/AnnaKarenina.jpg" alt="Book 1" />
+                      <a href="books/AnnaKarenina.html">
+                        <img src="../img/book/AnnaKarenina.jpg" alt="Anna Karenina" />
+                      </a>
                     </div>
                     <div class="product-info d-flex flex-column flex-grow-1">
-                      <h4 class="book-title">AnnaKarenina</h4>
-                      <p class="book-author">Leo Tolstoyk</p>
+                      <h4 class="book-title">Anna Karenina</h4>
+                      <p class="book-author">Leo Tolstoy</p>
                       <div class="rating">
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
@@ -361,7 +363,14 @@
                         class="price-action d-flex justify-content-between align-items-center mt-auto"
                       >
                         <span class="price">130.000đ</span>
-                        <button class="btn-add" onclick="addToCart(event, 1)">
+                        <button
+                          class="btn-add"
+                          data-id="anna-karenina"
+                          data-title="Anna Karenina"
+                          data-author="Leo Tolstoy"
+                          data-price="130000"
+                          data-image="../img/book/AnnaKarenina.jpg"
+                        >
                           <i class="bi bi-cart-plus"></i>
                         </button>
                       </div>
@@ -376,10 +385,9 @@
                     style="cursor: pointer"
                   >
                     <div class="product-img-box">
-                      <img
-                        src="../img/book/TheCallofTheWild.jpg"
-                        alt="Book 2"
-                      />
+                      <a href="books/CallofTheWild.html">
+                        <img src="../img/book/TheCallofTheWild.jpg" alt="The Call of The Wild" />
+                      </a>
                     </div>
                     <div class="product-info d-flex flex-column flex-grow-1">
                       <h4 class="book-title">The call of the Wild</h4>

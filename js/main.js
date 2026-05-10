@@ -186,25 +186,17 @@ $(document).ready(function () {
   }
 
   // ==========================================
-  // BOOKS: THÊM SÁCH VÀO GIỎ HÀNG
+  // HÀM DÙNG CHUNG: THÊM SÁCH VÀO GIỎ
   // ==========================================
-  $(".btn-add").on("click", function () {
-    const card = $(this).closest(".product-card");
-    const col = $(this).closest(".col");
-
-    const book = {
-      title: card.find(".book-title").text().trim(),
-      author: card.find(".book-author").text().trim(),
-      price: parseInt(col.data("price")),
-      image: card.find(".product-img-box img").attr("src"),
-      quantity: 1,
-    };
-
+  function addBookToCart(book) {
     let cart = getCart();
-    const oldBook = cart.find((item) => item.title === book.title);
+
+    const oldBook = cart.find(function (item) {
+      return item.id === book.id;
+    });
 
     if (oldBook) {
-      oldBook.quantity++;
+      oldBook.quantity += 1;
     } else {
       cart.push(book);
     }
@@ -212,7 +204,57 @@ $(document).ready(function () {
     saveCart(cart);
     updateCartCount();
     renderCart();
+  }
+
+  // ==========================================
+  // BOOKS PAGE: THÊM SÁCH VÀO GIỎ HÀNG
+  // ==========================================
+  $(".btn-add:not(.detail-add-cart)").on("click", function (e) {
+    e.preventDefault();
+
+    const card = $(this).closest(".product-card");
+    const col = $(this).closest(".col");
+
+    const title = card.find(".book-title").text().trim();
+    const author = card.find(".book-author").text().trim();
+    const price = Number(col.data("price"));
+    const image = card.find(".product-img-box img").attr("src");
+
+    const book = {
+      id: $(this).data("id") || title.toLowerCase().replaceAll(" ", "-"),
+      title: $(this).data("title") || title,
+      author: $(this).data("author") || author,
+      price: Number($(this).data("price")) || price,
+      image: $(this).data("image") || image,
+      quantity: 1,
+    };
+
+    addBookToCart(book);
+
     alert("Đã thêm sách vào giỏ hàng!");
+  });
+
+  // ==========================================
+  // BOOK DETAIL PAGE: THÊM SÁCH VÀO GIỎ HÀNG
+  // ==========================================
+  $(".detail-add-cart").on("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const book = {
+      id: $(this).data("id"),
+      title: $(this).data("title"),
+      author: $(this).data("author"),
+      price: Number($(this).data("price")),
+      image: $(this).data("image"),
+      quantity: 1,
+    };
+
+    addBookToCart(book);
+
+    alert("Đã thêm sách vào giỏ hàng!");
+
+    window.location.href = "../books.html";
   });
 
   // ==========================================

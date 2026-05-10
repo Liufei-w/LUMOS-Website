@@ -1718,3 +1718,18 @@ section.signup-container {
     z-index: 2;
   }
 }
+
+.product-img-box a {
+  display: block;
+  height: 100%;
+}
+
+.product-img-box a img {
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.product-img-box a:hover img {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
