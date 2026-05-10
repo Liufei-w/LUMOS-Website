@@ -443,3 +443,7 @@ const bookLinks = {
 function goDetail(id) {
   window.location.href = bookLinks[id];
 }
+
+function addToCart(event, id) {
+  event.stopPropagation();
+}
