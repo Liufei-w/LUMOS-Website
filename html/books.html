@@ -118,435 +118,634 @@
         </ul>
       </nav>
 
-      <div class="container-fluid py-4 px-md-5" style="max-width: 1400px;">
-        <ol class="breadcrumb m-0 custom-breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html"><i class="bi bi-house-door-fill me-1"></i>Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Books</li>
-          </ol>
       <div class="container-fluid py-4 px-md-5" style="max-width: 1400px">
-
-        <div class="row gy-4">
-          <!-- SIDEBAR -->
-          <aside class="col-12 col-md-4 col-lg-3">
-            <div class="sidebar-box">
-              <h3>Catalog Book</h3>
-              <ul class="category-list m-0 p-0">
-                <li><a href="#">Novel - Literature</a></li>
-                <li><a href="#">Science Fiction</a></li>
-                <li><a href="#">Programming - Technology</a></li>
-                <li><a href="#">Life skills</a></li>
-                <li><a href="#">Foreign literature books</a></li>
-              </ul>
-            </div>
-
-            <div class="sidebar-box">
-              <h3>Filter by price</h3>
-              <ul class="category-list m-0 p-0" id="price-filter">
-                <li>
-                  <a
-                    href="#"
-                    data-min="0"
-                    data-max="999999999"
-                    style="color: #ff7b00"
-                    >All prices</a
-                  >
-                </li>
-                <li>
-                  <a href="#" data-min="0" data-max="99999">Under 100.000đ</a>
-                </li>
-                <li>
-                  <a href="#" data-min="100000" data-max="200000"
-                    >100.000đ - 200.000đ</a
-                  >
-                </li>
-                <li>
-                  <a href="#" data-min="200001" data-max="999999999"
-                    >Over 200.000đ</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </aside>
-
-          <!-- MAIN CONTENT -->
-          <main class="col-12 col-md-8 col-lg-9">
-            <!-- BẮT ĐẦU CAROUSEL -->
-            <div
-              id="booksCarousel"
-              class="carousel slide mb-4"
-              data-bs-ride="carousel"
-              style="
-                border-radius: 16px;
-                overflow: hidden;
-                height: 300px;
-                background-color: #092635;
-              "
+        <ol class="breadcrumb m-0 custom-breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="index.html"
+              ><i class="bi bi-house-door-fill me-1"></i>Home</a
             >
-              <div class="carousel-indicators">
-                <button
-                  type="button"
-                  data-bs-target="#booksCarousel"
-                  data-bs-slide-to="0"
-                  class="active"
-                  aria-current="true"
-                  aria-label="Slide 1"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#booksCarousel"
-                  data-bs-slide-to="1"
-                  aria-label="Slide 2"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#booksCarousel"
-                  data-bs-slide-to="2"
-                  aria-label="Slide 3"
-                ></button>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">Books</li>
+        </ol>
+        <div class="container-fluid py-4 px-md-5" style="max-width: 1400px">
+          <div class="row gy-4">
+            <!-- SIDEBAR -->
+            <aside class="col-12 col-md-4 col-lg-3">
+              <div class="sidebar-box">
+                <h3>Catalog Book</h3>
+                <ul class="category-list m-0 p-0">
+                  <li><a href="#">Novel - Literature</a></li>
+                  <li><a href="#">Science Fiction</a></li>
+                  <li><a href="#">Programming - Technology</a></li>
+                  <li><a href="#">Life skills</a></li>
+                  <li><a href="#">Foreign literature books</a></li>
+                </ul>
               </div>
 
-              <!-- Nội dung các Slide -->
-              <div class="carousel-inner h-100">
-                <!-- Slide 1 -->
-                <div class="carousel-item active h-100">
-                  <img
-                    src="../img/book/Carousel1.jpg"
-                    class="d-block w-100 h-100 object-fit-cover"
-                    alt="Banner Sách Mới"
-                    style="opacity: 0.6"
-                  />
-                  <div
-                    class="position-absolute top-50 start-0 translate-middle-y ms-4 ms-md-5 text-start text-white w-75"
-                  >
-                    <h2
-                      class="display-6 fw-bold"
-                      style="text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8)"
-                    >
-                      New books this month!
-                    </h2>
-                    <p class="fs-5">
-                      Discover the most sought-after book titles.
-                    </p>
+              <div class="sidebar-box">
+                <h3>Filter by price</h3>
+                <ul class="category-list m-0 p-0" id="price-filter">
+                  <li>
                     <a
-                      href="banner.html"
-                      class="btn-primary d-inline-block mt-2"
-                      >Watch Now</a
+                      href="#"
+                      data-min="0"
+                      data-max="999999999"
+                      style="color: #ff7b00"
+                      >All prices</a
                     >
-                  </div>
-                </div>
-
-                <!-- Slide 2  -->
-                <div class="carousel-item h-100">
-                  <img
-                    src="../../img/book/Carousel2.jpg"
-                    class="d-block w-100 h-100 object-fit-cover"
-                    alt="Bestsellers"
-                    style="opacity: 0.6"
-                  />
-                  <div
-                    class="position-absolute top-50 start-0 translate-middle-y ms-4 ms-md-5 text-start text-white w-75"
-                  >
-                    <h2
-                      class="display-6 fw-bold"
-                      style="text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8)"
+                  </li>
+                  <li>
+                    <a href="#" data-min="0" data-max="99999">Under 100.000đ</a>
+                  </li>
+                  <li>
+                    <a href="#" data-min="100000" data-max="200000"
+                      >100.000đ - 200.000đ</a
                     >
-                      Top Bestsellers 2026
-                    </h2>
-                    <p class="fs-5">
-                      Don't miss out on the most popular books.
-                    </p>
-                    <a href="#" class="btn-primary d-inline-block mt-2"
-                      >Explore</a
+                  </li>
+                  <li>
+                    <a href="#" data-min="200001" data-max="999999999"
+                      >Over 200.000đ</a
                     >
-                  </div>
-                </div>
-
-                <!-- Slide 3 -->
-                <div class="carousel-item h-100">
-                  <img
-                    src="../img/book/Carousel3.jpg"
-                    class="d-block w-100 h-100 object-fit-cover"
-                    alt="Flash Sale"
-                    style="opacity: 0.6"
-                  />
-                  <div
-                    class="position-absolute top-50 start-0 translate-middle-y ms-4 ms-md-5 text-start text-white w-75"
-                  >
-                    <h2
-                      class="display-6 fw-bold"
-                      style="text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8)"
-                    >
-                      Flash Sale -50%
-                    </h2>
-                    <p class="fs-5">
-                      Get your favorite books at unbeatable prices.
-                    </p>
-                    <a href="#" class="btn-primary d-inline-block mt-2"
-                      >Shop Now</a
-                    >
-                  </div>
-                </div>
+                  </li>
+                </ul>
               </div>
+            </aside>
 
-              <!-- Nút bấm Qua Lại -->
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#booksCarousel"
-                data-bs-slide="prev"
+            <!-- MAIN CONTENT -->
+            <main class="col-12 col-md-8 col-lg-9">
+              <!-- BẮT ĐẦU CAROUSEL -->
+              <div
+                id="booksCarousel"
+                class="carousel slide mb-4"
+                data-bs-ride="carousel"
+                style="
+                  border-radius: 16px;
+                  overflow: hidden;
+                  height: 300px;
+                  background-color: #092635;
+                "
               >
-                <span
-                  class="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#booksCarousel"
-                data-bs-slide="next"
+                <div class="carousel-indicators">
+                  <button
+                    type="button"
+                    data-bs-target="#booksCarousel"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Slide 1"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#booksCarousel"
+                    data-bs-slide-to="1"
+                    aria-label="Slide 2"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#booksCarousel"
+                    data-bs-slide-to="2"
+                    aria-label="Slide 3"
+                  ></button>
+                </div>
+
+                <!-- Nội dung các Slide -->
+                <div class="carousel-inner h-100">
+                  <!-- Slide 1 -->
+                  <div class="carousel-item active h-100">
+                    <img
+                      src="../img/book/Carousel1.jpg"
+                      class="d-block w-100 h-100 object-fit-cover"
+                      alt="Banner Sách Mới"
+                      style="opacity: 0.6"
+                    />
+                    <div
+                      class="position-absolute top-50 start-0 translate-middle-y ms-4 ms-md-5 text-start text-white w-75"
+                    >
+                      <h2
+                        class="display-6 fw-bold"
+                        style="text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8)"
+                      >
+                        New books this month!
+                      </h2>
+                      <p class="fs-5">
+                        Discover the most sought-after book titles.
+                      </p>
+                      <a
+                        href="../html/category.html"
+                        class="btn-primary d-inline-block mt-2"
+                        >Watch Now</a
+                      >
+                    </div>
+                  </div>
+
+                  <!-- Slide 2  -->
+                  <div class="carousel-item h-100">
+                    <img
+                      src="../../img/book/Carousel2.jpg"
+                      class="d-block w-100 h-100 object-fit-cover"
+                      alt="Bestsellers"
+                      style="opacity: 0.6"
+                    />
+                    <div
+                      class="position-absolute top-50 start-0 translate-middle-y ms-4 ms-md-5 text-start text-white w-75"
+                    >
+                      <h2
+                        class="display-6 fw-bold"
+                        style="text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8)"
+                      >
+                        Top Bestsellers 2026
+                      </h2>
+                      <p class="fs-5">
+                        Don't miss out on the most popular books.
+                      </p>
+                      <a href="#" class="btn-primary d-inline-block mt-2"
+                        >Explore</a
+                      >
+                    </div>
+                  </div>
+
+                  <!-- Slide 3 -->
+                  <div class="carousel-item h-100">
+                    <img
+                      src="../img/book/Carousel3.jpg"
+                      class="d-block w-100 h-100 object-fit-cover"
+                      alt="Flash Sale"
+                      style="opacity: 0.6"
+                    />
+                    <div
+                      class="position-absolute top-50 start-0 translate-middle-y ms-4 ms-md-5 text-start text-white w-75"
+                    >
+                      <h2
+                        class="display-6 fw-bold"
+                        style="text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8)"
+                      >
+                        Flash Sale -50%
+                      </h2>
+                      <p class="fs-5">
+                        Get your favorite books at unbeatable prices.
+                      </p>
+                      <a href="#" class="btn-primary d-inline-block mt-2"
+                        >Shop Now</a
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Nút bấm Qua Lại -->
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#booksCarousel"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#booksCarousel"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+
+              <!-- KẾT THÚC CAROUSEL -->
+
+              <div class="toolbar mb-4">
+                <h2 class="m-0">Featured Books</h2>
+                <div class="sort-options">
+                  <label>Sort:</label>
+                  <select id="sortBooks">
+                    <option value="newest">Newest</option>
+                    <option value="desc">Price: Decreasing</option>
+                    <option value="asc">Price: Increasing</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- VỊ TRÍ ADD SÁCH -->
+              <div
+                class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4"
+                id="book-Grid"
               >
-                <span
-                  class="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
-
-            <!-- KẾT THÚC CAROUSEL -->
-
-            <div class="toolbar mb-4">
-              <h2 class="m-0">Featured Books</h2>
-              <div class="sort-options">
-                <label>Sort:</label>
-                <select id="sortBooks">
-                  <option value="newest">Newest</option>
-                  <option value="desc">Price: Decreasing</option>
-                  <option value="asc">Price: Increasing</option>
-                </select>
-              </div>
-            </div>
-
-            <!-- VỊ TRÍ ADD SÁCH -->
-            <div
-              class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4"
-              id="book-Grid"
-            >
-              <!-- Sách 1 -->
-              <div class="col" data-price="150000">
-                <div class="product-card h-100 d-flex flex-column">
-                  <div class="product-img-box">
-                    <img src="../img/book/EastodEden.jpg" alt="Book 1" />
-                  </div>
-                  <div class="product-info d-flex flex-column flex-grow-1">
-                    <h4 class="book-title">East of Eden</h4>
-                    <p class="book-author">John Steinbeck</p>
-                    <div class="rating">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-half"></i>
+                <!-- Sách 1 -->
+                <div class="col" data-price="130000">
+                  <div class="product-card h-100 d-flex flex-column">
+                    <div class="product-img-box">
+                      <img src="../img/book/AnnaKarenina.jpg" alt="Book 1" />
                     </div>
-                    <div
-                      class="price-action d-flex justify-content-between align-items-center mt-auto"
-                    >
-                      <span class="price">150.000đ</span>
-                      <button class="btn-add">
-                        <i class="bi bi-cart-plus"></i>
-                      </button>
+                    <div class="product-info d-flex flex-column flex-grow-1">
+                      <h4 class="book-title">AnnaKarenina</h4>
+                      <p class="book-author">Leo Tolstoyk</p>
+                      <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                      </div>
+                      <div
+                        class="price-action d-flex justify-content-between align-items-center mt-auto"
+                      >
+                        <span class="price">130.000đ</span>
+                        <button class="btn-add">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Sách 2 -->
+                <div class="col" data-price="170000">
+                  <div class="product-card h-100 d-flex flex-column">
+                    <div class="product-img-box">
+                      <img
+                        src="../img/book/TheCallofTheWild.jpg"
+                        alt="Book 2"
+                      />
+                    </div>
+                    <div class="product-info d-flex flex-column flex-grow-1">
+                      <h4 class="book-title">The call of the Wild</h4>
+                      <p class="book-author">Jack London</p>
+                      <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                      </div>
+                      <div
+                        class="price-action d-flex justify-content-between align-items-center mt-auto"
+                      >
+                        <span class="price">170.000đ</span>
+                        <button class="btn-add">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Sách 3 -->
+                <div class="col" data-price="150000">
+                  <div class="product-card h-100 d-flex flex-column">
+                    <div class="product-img-box">
+                      <img src="../img/book/EastodEden.jpg" alt="Book 3" />
+                    </div>
+                    <div class="product-info d-flex flex-column flex-grow-1">
+                      <h4 class="book-title">East of Eden</h4>
+                      <p class="book-author">John Steinbeck</p>
+                      <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                      </div>
+                      <div
+                        class="price-action d-flex justify-content-between align-items-center mt-auto"
+                      >
+                        <span class="price">150.000đ</span>
+                        <button class="btn-add">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Sách 4 -->
+                <div class="col" data-price="175000">
+                  <div class="product-card h-100 d-flex flex-column">
+                    <div class="product-img-box">
+                      <img src="../img/book/HomoDeus.jpg" alt="Book 4" />
+                    </div>
+                    <div class="product-info d-flex flex-column flex-grow-1">
+                      <h4 class="book-title">
+                        Homo Deus: A Brief History of Tomorrow
+                      </h4>
+                      <p class="book-author">Yuval Noah Harari</p>
+                      <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                      </div>
+                      <div
+                        class="price-action d-flex justify-content-between align-items-center mt-auto"
+                      >
+                        <span class="price">175.000đ</span>
+                        <button class="btn-add">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Sách 5-->
+                <div class="col" data-price="140000">
+                  <div class="product-card h-100 d-flex flex-column">
+                    <div class="product-img-box">
+                      <img src="../img/book/Homosapiens.jpg" alt="Book 5" />
+                    </div>
+                    <div class="product-info d-flex flex-column flex-grow-1">
+                      <h4 class="book-title">
+                        Sapiens: A Brief History of Humankind
+                      </h4>
+                      <p class="book-author">Yuval Noah Harari</p>
+                      <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                      </div>
+                      <div
+                        class="price-action d-flex justify-content-between align-items-center mt-auto"
+                      >
+                        <span class="price">140.000đ</span>
+                        <button class="btn-add">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Sách 6 -->
+                <div class="col" data-price="120000">
+                  <div class="product-card h-100 d-flex flex-column">
+                    <div class="product-img-box">
+                      <img src="../img/book/ofMiceAndMan.jpg" alt="Book 6" />
+                    </div>
+                    <div class="product-info d-flex flex-column flex-grow-1">
+                      <h4 class="book-title">Of Mice and Men</h4>
+                      <p class="book-author">John Steinbeck</p>
+                      <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                      </div>
+                      <div
+                        class="price-action d-flex justify-content-between align-items-center mt-auto"
+                      >
+                        <span class="price">120.000đ</span>
+                        <button class="btn-add">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Sách 7 -->
+                <div class="col" data-price="210000">
+                  <div class="product-card h-100 d-flex flex-column">
+                    <div class="product-img-box">
+                      <img src="../img/book/TheAlchmist.jpg" alt="Book 7" />
+                    </div>
+                    <div class="product-info d-flex flex-column flex-grow-1">
+                      <h4 class="book-title">
+                        The Alchemist: A Modern Classic Fable of Spiritual
+                        Healing, Self-Discovery, and the Power of Dreams
+                      </h4>
+                      <p class="book-author">Paulo Coelho</p>
+                      <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                      </div>
+                      <div
+                        class="price-action d-flex justify-content-between align-items-center mt-auto"
+                      >
+                        <span class="price">210.000đ</span>
+                        <button class="btn-add">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Sách 8 -->
+                <div class="col" data-price="220000">
+                  <div class="product-card h-100 d-flex flex-column">
+                    <div class="product-img-box">
+                      <img
+                        src="../img/book/TheCountofMonteCristo.jpg"
+                        alt="Book 8"
+                      />
+                    </div>
+                    <div class="product-info d-flex flex-column flex-grow-1">
+                      <h4 class="book-title">The Count of Monte Cristo</h4>
+                      <p class="book-author">Alexandre Dumas</p>
+                      <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                      </div>
+                      <div
+                        class="price-action d-flex justify-content-between align-items-center mt-auto"
+                      >
+                        <span class="price">220.000đ</span>
+                        <button class="btn-add">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Sách 9 -->
+                <div class="col" data-price="150000">
+                  <div class="product-card h-100 d-flex flex-column">
+                    <div class="product-img-box">
+                      <img src="../img/book/ThePilgrimage.jpg" alt="Book 9" />
+                    </div>
+                    <div class="product-info d-flex flex-column flex-grow-1">
+                      <h4 class="book-title">The Pilgrimage</h4>
+                      <p class="book-author">John Steinbeck</p>
+                      <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                      </div>
+                      <div
+                        class="price-action d-flex justify-content-between align-items-center mt-auto"
+                      >
+                        <span class="price">150.000đ</span>
+                        <button class="btn-add">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Sách 10 -->
+                <div class="col" data-price="200000">
+                  <div class="product-card h-100 d-flex flex-column">
+                    <div class="product-img-box">
+                      <img
+                        src="../img/book/TheRiseandFalloftheDinosaurs.jpg"
+                        alt="Book 10"
+                      />
+                    </div>
+                    <div class="product-info d-flex flex-column flex-grow-1">
+                      <h4 class="book-title">
+                        The Rise and Fall of the Dinosaurs: A New History of
+                        Their Lost World
+                      </h4>
+                      <p class="book-author">Steve Brusatte</p>
+                      <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                      </div>
+                      <div
+                        class="price-action d-flex justify-content-between align-items-center mt-auto"
+                      >
+                        <span class="price">200.000đ</span>
+                        <button class="btn-add">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Sách 11 -->
+                <div class="col" data-price="230000">
+                  <div class="product-card h-100 d-flex flex-column">
+                    <div class="product-img-box">
+                      <img src="../img/book/Birb.jpg" alt="Book 11" />
+                    </div>
+                    <div class="product-info d-flex flex-column flex-grow-1">
+                      <h4 class="book-title">
+                        The Story of Birds: A New History from Their Dinosaur
+                        Origins to the Present
+                      </h4>
+                      <p class="book-author">Steve Brusatte</p>
+                      <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                      </div>
+                      <div
+                        class="price-action d-flex justify-content-between align-items-center mt-auto"
+                      >
+                        <span class="price">230.000đ</span>
+                        <button class="btn-add">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Sách 12 -->
+                <div class="col" data-price="110000">
+                  <div class="product-card h-100 d-flex flex-column">
+                    <div class="product-img-box">
+                      <img src="../img/book/ToBuildAFire.jpg" alt="Book 12" />
+                    </div>
+                    <div class="product-info d-flex flex-column flex-grow-1">
+                      <h4 class="book-title">To Build A Fire</h4>
+                      <p class="book-author">Jack London</p>
+                      <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                      </div>
+                      <div
+                        class="price-action d-flex justify-content-between align-items-center mt-auto"
+                      >
+                        <span class="price">110.000đ</span>
+                        <button class="btn-add">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Sách 13 -->
+                <div class="col" data-price="180000">
+                  <div class="product-card h-100 d-flex flex-column">
+                    <div class="product-img-box">
+                      <img
+                        src="../img/book/TwentyYearsLater.jpg"
+                        alt="Book 13"
+                      />
+                    </div>
+                    <div class="product-info d-flex flex-column flex-grow-1">
+                      <h4 class="book-title">Twenty Years later</h4>
+                      <p class="book-author">Alexandre Dumas</p>
+                      <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                      </div>
+                      <div
+                        class="price-action d-flex justify-content-between align-items-center mt-auto"
+                      >
+                        <span class="price">180.000đ</span>
+                        <button class="btn-add">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Sách 14 -->
+                <div class="col" data-price="150000">
+                  <div class="product-card h-100 d-flex flex-column">
+                    <div class="product-img-box">
+                      <img src="../img/book/WarandPeace.jpg" alt="Book 14" />
+                    </div>
+                    <div class="product-info d-flex flex-column flex-grow-1">
+                      <h4 class="book-title">War and Peace</h4>
+                      <p class="book-author">Leo Tolstoy</p>
+                      <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                      </div>
+                      <div
+                        class="price-action d-flex justify-content-between align-items-center mt-auto"
+                      >
+                        <span class="price">150.000đ</span>
+                        <button class="btn-add">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-
-              <!-- Sách 2 -->
-              <div class="col" data-price="220000">
-                <div class="product-card h-100 d-flex flex-column">
-                  <div class="product-img-box">
-                    <img
-                      src="../img/book/TheCountofMonteCristo.jpg"
-                      alt="Book 2"
-                    />
-                  </div>
-                  <div class="product-info d-flex flex-column flex-grow-1">
-                    <h4 class="book-title">The Count of MonteCristo</h4>
-                    <p class="book-author">Alexandre Dumas</p>
-                    <div class="rating">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                    </div>
-                    <div
-                      class="price-action d-flex justify-content-between align-items-center mt-auto"
-                    >
-                      <span class="price">220.000đ</span>
-                      <button class="btn-add">
-                        <i class="bi bi-cart-plus"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Sách 3 -->
-              <div class="col" data-price="170000">
-                <div class="product-card h-100 d-flex flex-column">
-                  <div class="product-img-box">
-                    <img src="../img/book/TheCallofTheWild.jpg" alt="Book 3" />
-                  </div>
-                  <div class="product-info d-flex flex-column flex-grow-1">
-                    <h4 class="book-title">The call of the Wild</h4>
-                    <p class="book-author">Jack London</p>
-                    <div class="rating">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-half"></i>
-                    </div>
-                    <div
-                      class="price-action d-flex justify-content-between align-items-center mt-auto"
-                    >
-                      <span class="price">170.000đ</span>
-                      <button class="btn-add">
-                        <i class="bi bi-cart-plus"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Sách 4 -->
-              <div class="col" data-price="120000">
-                <div class="product-card h-100 d-flex flex-column">
-                  <div class="product-img-box">
-                    <img src="../img/book/ofMiceAndMan.jpg" alt="Book 4" />
-                  </div>
-                  <div class="product-info d-flex flex-column flex-grow-1">
-                    <h4 class="book-title">Of Mice and Men</h4>
-                    <p class="book-author">John Steinbeck</p>
-                    <div class="rating">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-half"></i>
-                    </div>
-                    <div
-                      class="price-action d-flex justify-content-between align-items-center mt-auto"
-                    >
-                      <span class="price">120.000đ</span>
-                      <button class="btn-add">
-                        <i class="bi bi-cart-plus"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Sách 5 -->
-              <div class="col" data-price="210000">
-                <div class="product-card h-100 d-flex flex-column">
-                  <div class="product-img-box">
-                    <img src="../img/book/TheAlchmist.jpg" alt="Book 5" />
-                  </div>
-                  <div class="product-info d-flex flex-column flex-grow-1">
-                    <h4 class="book-title">The Alchmist</h4>
-                    <p class="book-author">Paulo Coelho</p>
-                    <div class="rating">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-half"></i>
-                    </div>
-                    <div
-                      class="price-action d-flex justify-content-between align-items-center mt-auto"
-                    >
-                      <span class="price">210.000đ</span>
-                      <button class="btn-add">
-                        <i class="bi bi-cart-plus"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Sách 6 -->
-              <div class="col" data-price="140000">
-                <div class="product-card h-100 d-flex flex-column">
-                  <div class="product-img-box">
-                    <img src="../img/book/Homosapiens.jpg" alt="Book 6" />
-                  </div>
-                  <div class="product-info d-flex flex-column flex-grow-1">
-                    <h4 class="book-title">
-                      Sapiens: A Brief History of Humankind
-                    </h4>
-                    <p class="book-author">Yuval Noah Harari</p>
-                    <div class="rating">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-half"></i>
-                    </div>
-                    <div
-                      class="price-action d-flex justify-content-between align-items-center mt-auto"
-                    >
-                      <span class="price">140.000đ</span>
-                      <button class="btn-add">
-                        <i class="bi bi-cart-plus"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Sách 7 -->
-              <div class="col" data-price="200000">
-                <div class="product-card h-100 d-flex flex-column">
-                  <div class="product-img-box">
-                    <img
-                      src="../img/book/TheRiseAndFallofTheDinosaurs.jpg"
-                      alt="Book 7"
-                    />
-                  </div>
-                  <div class="product-info d-flex flex-column flex-grow-1">
-                    <h4 class="book-title">
-                      The Rise and Fall of the Dinosaurs
-                    </h4>
-                    <p class="book-author">Steve Brusatte</p>
-                    <div class="rating">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-half"></i>
-                    </div>
-                    <div
-                      class="price-action d-flex justify-content-between align-items-center mt-auto"
-                    >
-                      <span class="price">200.000đ</span>
-                      <button class="btn-add">
-                        <i class="bi bi-cart-plus"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </main>
+            </main>
+          </div>
         </div>
       </div>
-      
-    </div>
-    <footer class="bg-dark text-light py-2 mt-5">
+      <footer class="bg-dark text-light py-2 mt-5">
         <div class="container text-center text-md-start">
           <div class="row text-center text-md-start">
             <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-2">
@@ -667,5 +866,6 @@
           </div>
         </div>
       </footer>
+    </div>
   </body>
 </html>

@@ -1,6 +1,5 @@
 $(document).ready(function () {
-
-// KIỂM TRA ĐĂNG KÝ
+  // KIỂM TRA ĐĂNG KÝ
   $("#formDangKy").on("submit", function (e) {
     e.preventDefault();
 
@@ -48,17 +47,14 @@ $(document).ready(function () {
     alert(thongBaoThanhCong);
   });
 
-
-
-    // ==========================================
-    // SORT SÁCH TĂNG GIẢM
-    // ==========================================
+  // ==========================================
+  // SORT SÁCH TĂNG GIẢM
+  // ==========================================
   const sortSelect = $("#sortBooks");
   const bookGrid = $("#book-Grid");
 
   // Chỉ bắt đầu khi ở trang có nhiều sách
   if (sortSelect.length > 0 && bookGrid.length > 0) {
-
     const originalBooks = bookGrid.children(".col").toArray();
 
     sortSelect.on("change", function () {
@@ -85,7 +81,7 @@ $(document).ready(function () {
     });
 
     // ==========================================
-    // SORT THEO GIÁ 
+    // SORT THEO GIÁ
     // ==========================================
     const priceFilters = $("#price-filter a");
 
@@ -110,8 +106,7 @@ $(document).ready(function () {
     });
   }
 
-
-// ==========================================
+  // ==========================================
   // XỬ LÝ TRANG CATEGORIES (Click danh mục hiện sách)
   // ==========================================
   let $categoryLinks = $(".category-link");
@@ -121,10 +116,9 @@ $(document).ready(function () {
   let $btnBackCategories = $("#btn-back-categories");
 
   if ($categoryGrid.length > 0) {
-  
     $categoryLinks.on("click", function (e) {
       e.preventDefault();
-      
+
       let catName = $(this).data("name");
 
       $categoryGrid.fadeOut(200, function () {
@@ -143,7 +137,6 @@ $(document).ready(function () {
     });
   }
 
-
   // ==========================================
   // XỬ LÝ TRANG AUTHORS (Click tác giả hiện sách)
   // ==========================================
@@ -156,7 +149,7 @@ $(document).ready(function () {
   if ($authorGrid.length > 0) {
     $authorLinks.on("click", function (e) {
       e.preventDefault();
-      
+
       const authorName = $(this).data("name");
       $authorGrid.fadeOut(200, function () {
         $authorTitle.text(authorName);
@@ -166,7 +159,6 @@ $(document).ready(function () {
     });
 
     $btnBackAuthors.on("click", function () {
-      
       $authorBooksGrid.fadeOut(200, function () {
         $btnBackAuthors.hide();
         $authorTitle.text("AUTHORS");
@@ -175,79 +167,80 @@ $(document).ready(function () {
     });
   }
 
-// ==========================================
-// CART: TĂNG/GIẢM SỐ LƯỢNG + TÍNH TỔNG TIỀN
-// ==========================================
-const cartItems = $(".cart-item");
+  // ==========================================
+  // CART: TĂNG/GIẢM SỐ LƯỢNG + TÍNH TỔNG TIỀN
+  // ==========================================
+  const cartItems = $(".cart-item");
 
-    const formatMoney = n => n.toLocaleString("vi-VN") + "đ";
-    const getCart = () => JSON.parse(localStorage.getItem("cart")) || [];
-    const saveCart = cart => localStorage.setItem("cart", JSON.stringify(cart));
+  const formatMoney = (n) => n.toLocaleString("vi-VN") + "đ";
+  const getCart = () => JSON.parse(localStorage.getItem("cart")) || [];
+  const saveCart = (cart) => localStorage.setItem("cart", JSON.stringify(cart));
 
-    function updateCartCount() {
-      const total = getCart().reduce((sum, item) => sum + item.quantity, 0);
-      const cartLink = $('a[href="cart.html"]');
+  function updateCartCount() {
+    const total = getCart().reduce((sum, item) => sum + item.quantity, 0);
+    const cartLink = $('a[href="cart.html"]');
 
-      if (cartLink.length) {
-        cartLink.html(`Cart <i class="bi bi-cart2"></i> (${total})`);
-      }
+    if (cartLink.length) {
+      cartLink.html(`Cart <i class="bi bi-cart2"></i> (${total})`);
+    }
+  }
+
+  // ==========================================
+  // BOOKS: THÊM SÁCH VÀO GIỎ HÀNG
+  // ==========================================
+  $(".btn-add").on("click", function () {
+    const card = $(this).closest(".product-card");
+    const col = $(this).closest(".col");
+
+    const book = {
+      title: card.find(".book-title").text().trim(),
+      author: card.find(".book-author").text().trim(),
+      price: parseInt(col.data("price")),
+      image: card.find(".product-img-box img").attr("src"),
+      quantity: 1,
+    };
+
+    let cart = getCart();
+    const oldBook = cart.find((item) => item.title === book.title);
+
+    if (oldBook) {
+      oldBook.quantity++;
+    } else {
+      cart.push(book);
     }
 
-    // ==========================================
-    // BOOKS: THÊM SÁCH VÀO GIỎ HÀNG
-    // ==========================================
-    $(".btn-add").on("click", function () {
-      const card = $(this).closest(".product-card");
-      const col = $(this).closest(".col");
+    saveCart(cart);
+    updateCartCount();
+    renderCart();
+    alert("Đã thêm sách vào giỏ hàng!");
+  });
 
-      const book = {
-        title: card.find(".book-title").text().trim(),
-        author: card.find(".book-author").text().trim(),
-        price: parseInt(col.data("price")),
-        image: card.find(".product-img-box img").attr("src"),
-        quantity: 1
-      };
+  // ==========================================
+  // CART PAGE
+  // ==========================================
+  const cartList = $(".cart-list");
 
-      let cart = getCart();
-      const oldBook = cart.find(item => item.title === book.title);
+  function updateTotal() {
+    const subtotal = getCart().reduce((sum, item) => {
+      return sum + item.price * item.quantity;
+    }, 0);
 
-      if (oldBook) {
-        oldBook.quantity++;
-      } else {
-        cart.push(book);
-      }
+    const shipping = subtotal === 0 || subtotal >= 300000 ? 0 : 30000;
+    const grandTotal = subtotal + shipping;
 
-      saveCart(cart);
-      updateCartCount();
-      alert("Đã thêm sách vào giỏ hàng!");
-    });
+    $("#subtotal").text(formatMoney(subtotal));
+    $("#shipping").text(shipping === 0 ? "Free" : formatMoney(shipping));
+    $("#discount").text(formatMoney(0));
+    $("#grandTotal").text(formatMoney(grandTotal));
+  }
 
-    // ==========================================
-    // CART PAGE
-    // ==========================================
-    const cartList = $(".cart-list");
+  function renderCart() {
+    if (!cartList.length) return;
 
-    function updateTotal() {
-      const subtotal = getCart().reduce((sum, item) => {
-        return sum + item.price * item.quantity;
-      }, 0);
+    const cart = getCart();
 
-      const shipping = subtotal === 0 || subtotal >= 300000 ? 0 : 30000;
-      const grandTotal = subtotal + shipping;
-
-      $("#subtotal").text(formatMoney(subtotal));
-      $("#shipping").text(shipping === 0 ? "Free" : formatMoney(shipping));
-      $("#discount").text(formatMoney(0));
-      $("#grandTotal").text(formatMoney(grandTotal));
-    }
-
-    function renderCart() {
-      if (!cartList.length) return;
-
-      const cart = getCart();
-
-      if (cart.length === 0) {
-        cartList.html(`
+    if (cart.length === 0) {
+      cartList.html(`
           <div class="cart-card text-center">
             <i class="bi bi-cart-x" style="font-size: 50px; color: #ff7b00;"></i>
             <h3 class="mt-3">Your cart is empty</h3>
@@ -258,15 +251,15 @@ const cartItems = $(".cart-item");
           </div>
         `);
 
-        updateTotal();
-        updateCartCount();
-        return;
-      }
+      updateTotal();
+      updateCartCount();
+      return;
+    }
 
-      let html = "";
+    let html = "";
 
-      cart.forEach((item, index) => {
-        html += `
+    cart.forEach((item, index) => {
+      html += `
           <div class="cart-item" data-index="${index}">
             <div class="cart-product">
               <div class="cart-img-box">
@@ -297,86 +290,86 @@ const cartItems = $(".cart-item");
             </div>
           </div>
         `;
-      });
-
-      cartList.html(html);
-      updateTotal();
-      updateCartCount();
-    }
-
-    cartList.on("click", ".btn-plus, .btn-minus, .remove-btn", function () {
-      const index = $(this).closest(".cart-item").data("index");
-      let cart = getCart();
-
-      if ($(this).hasClass("btn-plus")) {
-        cart[index].quantity++;
-      }
-
-      if ($(this).hasClass("btn-minus") && cart[index].quantity > 1) {
-        cart[index].quantity--;
-      }
-
-      if ($(this).hasClass("remove-btn")) {
-        cart.splice(index, 1);
-      }
-
-      saveCart(cart);
-      renderCart();
     });
 
+    cartList.html(html);
+    updateTotal();
+    updateCartCount();
+  }
+
+  cartList.on("click", ".btn-plus, .btn-minus, .remove-btn", function () {
+    const index = $(this).closest(".cart-item").data("index");
+    let cart = getCart();
+
+    if ($(this).hasClass("btn-plus")) {
+      cart[index].quantity++;
+    }
+
+    if ($(this).hasClass("btn-minus") && cart[index].quantity > 1) {
+      cart[index].quantity--;
+    }
+
+    if ($(this).hasClass("remove-btn")) {
+      cart.splice(index, 1);
+    }
+
+    saveCart(cart);
     renderCart();
+  });
 
-    // ==========================================
-    // CHECKOUT MODAL
-    // ==========================================
-    const checkoutModal = $("#checkoutModal");
+  renderCart();
 
-    if (checkoutModal.length > 0) {
-      function clearCheckoutErrors() {
-        $("#nameError, #phoneError, #emailError, #addressError").text("");
+  // ==========================================
+  // CHECKOUT MODAL
+  // ==========================================
+  const checkoutModal = $("#checkoutModal");
+
+  if (checkoutModal.length > 0) {
+    function clearCheckoutErrors() {
+      $("#nameError, #phoneError, #emailError, #addressError").text("");
+    }
+
+    function validCheckoutForm() {
+      clearCheckoutErrors();
+
+      let ok = true;
+      const name = $("#customerName").val().trim();
+      const phone = $("#customerPhone").val().trim();
+      const email = $("#customerEmail").val().trim();
+      const address = $("#customerAddress").val().trim();
+
+      if (name.length < 2) {
+        $("#nameError").text("Please enter your full name.");
+        ok = false;
       }
 
-      function validCheckoutForm() {
-        clearCheckoutErrors();
-
-        let ok = true;
-        const name = $("#customerName").val().trim();
-        const phone = $("#customerPhone").val().trim();
-        const email = $("#customerEmail").val().trim();
-        const address = $("#customerAddress").val().trim();
-
-        if (name.length < 2) {
-          $("#nameError").text("Please enter your full name.");
-          ok = false;
-        }
-
-        if (!/^[0-9]{10}$/.test(phone)) {
-          $("#phoneError").text("Phone number must have 10 digits.");
-          ok = false;
-        }
-
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-          $("#emailError").text("Please enter a valid email.");
-          ok = false;
-        }
-
-        if (address.length < 10) {
-          $("#addressError").text("Please enter a detailed delivery address.");
-          ok = false;
-        }
-
-        return ok;
+      if (!/^[0-9]{10}$/.test(phone)) {
+        $("#phoneError").text("Phone number must have 10 digits.");
+        ok = false;
       }
 
-      function updateCheckoutModal() {
-        const cart = getCart();
-        let subtotal = 0;
-        let html = "";
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        $("#emailError").text("Please enter a valid email.");
+        ok = false;
+      }
 
-        cart.forEach(item => {
-          subtotal += item.price * item.quantity;
+      if (address.length < 10) {
+        $("#addressError").text("Please enter a detailed delivery address.");
+        ok = false;
+      }
 
-          html += `
+      return ok;
+    }
+
+    function updateCheckoutModal() {
+      const cart = getCart();
+      let subtotal = 0;
+      let html = "";
+
+      cart.forEach((item) => {
+        subtotal += item.price * item.quantity;
+
+        html += `
             <div class="checkout-book">
               <img src="${item.image}" alt="${item.title}" />
               <div>
@@ -386,43 +379,67 @@ const cartItems = $(".cart-item");
               </div>
             </div>
           `;
-        });
-
-        const shipping = subtotal === 0 || subtotal >= 300000 ? 0 : 30000;
-        const grandTotal = subtotal + shipping;
-
-        $("#modalOrderItems").html(html);
-        $("#modalSubtotal").text(formatMoney(subtotal));
-        $("#modalShipping").text(shipping === 0 ? "Free" : formatMoney(shipping));
-        $("#modalShippingFee").text(shipping === 0 ? "Free" : formatMoney(shipping));
-        $("#modalDiscount").text(formatMoney(0));
-        $("#modalGrandTotal").text(formatMoney(grandTotal));
-      }
-
-      checkoutModal.on("show.bs.modal", function (e) {
-        if (getCart().length === 0) {
-          e.preventDefault();
-          alert("Your cart is empty!");
-          return;
-        }
-
-        updateCheckoutModal();
       });
 
-      $("#placeOrderBtn").on("click", function () {
-        if (!validCheckoutForm()) return;
+      const shipping = subtotal === 0 || subtotal >= 300000 ? 0 : 30000;
+      const grandTotal = subtotal + shipping;
 
-        localStorage.removeItem("cart");
-
-        bootstrap.Modal.getInstance(document.getElementById("checkoutModal")).hide();
-
-        new bootstrap.Modal(document.getElementById("orderSuccessModal")).show();
-
-        renderCart();
-        updateCartCount();
-      });
+      $("#modalOrderItems").html(html);
+      $("#modalSubtotal").text(formatMoney(subtotal));
+      $("#modalShipping").text(shipping === 0 ? "Free" : formatMoney(shipping));
+      $("#modalShippingFee").text(
+        shipping === 0 ? "Free" : formatMoney(shipping),
+      );
+      $("#modalDiscount").text(formatMoney(0));
+      $("#modalGrandTotal").text(formatMoney(grandTotal));
     }
 
-    updateCartCount();
+    checkoutModal.on("show.bs.modal", function (e) {
+      if (getCart().length === 0) {
+        e.preventDefault();
+        alert("Your cart is empty!");
+        return;
+      }
 
+      updateCheckoutModal();
+    });
+
+    $("#placeOrderBtn").on("click", function () {
+      if (!validCheckoutForm()) return;
+
+      localStorage.removeItem("cart");
+
+      bootstrap.Modal.getInstance(
+        document.getElementById("checkoutModal"),
+      ).hide();
+
+      new bootstrap.Modal(document.getElementById("orderSuccessModal")).show();
+
+      renderCart();
+      updateCartCount();
+    });
+  }
+
+  updateCartCount();
 });
+
+const bookLinks = {
+  1: "../html/books/AnnaKarenina.html",
+  2: "../html/books/CallOfTheWild.html",
+  3: "../html/books/EastOfEden.html",
+  4: "../html/books/Homodeus.html",
+  5: "../html/books/Homosapiens.html",
+  6: "../html/books/OfMiceAndMan.html",
+  7: "../html/books/TheAlchemist.html",
+  8: "../html/books/TheCountOfMonteristo.html",
+  9: "../html/books/ThePilgrimage.html",
+  10: "../html/books/TheRiseAndFallOfTheDinosaur.html",
+  11: "../html/books/TheStoryOfBirds.html",
+  12: "../html/books/ToBuildAFire.html",
+  13: "../html/books/TwentyYearsLater.html",
+  14: "../html/books/WarAndPeace.html",
+};
+
+function goDetail(id) {
+  window.location.href = bookLinks[id];
+}

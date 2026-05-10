@@ -124,10 +124,14 @@
 
       <main class="container-fluid cart-container py-4 px-md-5">
         <ol class="breadcrumb m-0 custom-breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html"><i class="bi bi-house-door-fill me-1"></i>Home</a></li>
-            <li class="breadcrumb-item"><a href="books.html">Books</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Cart</li>
-          </ol>
+          <li class="breadcrumb-item">
+            <a href="index.html"
+              ><i class="bi bi-house-door-fill me-1"></i>Home</a
+            >
+          </li>
+          <li class="breadcrumb-item"><a href="books.html">Books</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Cart</li>
+        </ol>
         <div class="cart-title-box">
           <div
             class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3"
@@ -148,7 +152,34 @@
 
         <div class="row gy-4">
           <section class="col-12 col-lg-8 cart-list">
-            <!-- js thêm sách ở đây -->
+            <!-- Js sẽ thêm sách vào đây -->
+            <div class="cart-item" data-index="0" bis_skin_checked="1">
+              <div class="cart-product" bis_skin_checked="1">
+                <div class="cart-img-box" bis_skin_checked="1">
+                  <img src="../img/book/EastodEden.jpg" alt="East of Eden" />
+                </div>
+
+                <div class="cart-book-info" bis_skin_checked="1">
+                  <h4 class="cart-book-title">East of Eden</h4>
+                  <p class="cart-book-author">John Steinbeck</p>
+                  <p class="cart-book-price">150.000đ</p>
+                </div>
+              </div>
+
+              <div class="cart-actions" bis_skin_checked="1">
+                <div class="quantity-box" bis_skin_checked="1">
+                  <button class="btn-minus">-</button>
+                  <input type="text" class="qty-input" value="1" readonly="" />
+                  <button class="btn-plus">+</button>
+                </div>
+
+                <div class="item-total" bis_skin_checked="1">150.000đ</div>
+
+                <button class="remove-btn">
+                  <i class="bi bi-trash"></i>
+                </button>
+              </div>
+            </div>
           </section>
 
           <aside class="col-12 col-lg-4">
